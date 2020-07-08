@@ -23,7 +23,7 @@ export default {
 <style lang="scss" scoped>
 .button {
 	background-color: $secondaryPink;
-	font-family: "Josefin Sans";
+	font-family: "Josefin Sans", sans-serif;
 	padding: 6px 26px;
 	color: $white;
 	font-size: 12px;
