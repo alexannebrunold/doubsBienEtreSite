@@ -19,7 +19,24 @@
 			</p>
 			<Button textButton="Lire la suite" class="home__presentation--buttonNext" />
 		</section>
-		<div class="home__parallax"></div>
+		<div class="home__parallax2"></div>
+		<section class="home__contact">
+			<h1 class="home__contact--title">On reste en contact ?</h1>
+			<div class="home__contact__div">
+				<div class="home__contact__div__cardContact">
+					<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
+					<a href="tel:0102030405">01 02 03 04 05</a>
+					<span>
+						<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
+						<p>doubsbiênetre5@yahoo.fr</p>
+					</span>
+					<span>
+						<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
+						<p>doubsbiênetre5@yahoo.fr</p>
+					</span>
+				</div>
+			</div>
+		</section>
 	</div>
 </template>
 
@@ -38,6 +55,7 @@ export default {
 <style lang="scss" scoped>
 .home {
 	width: 100vw;
+
 	&__background {
 		height: 60vh;
 		font-family: "Dancing Script", cursive;
@@ -168,6 +186,46 @@ export default {
 		background-position: center;
 		background-repeat: no-repeat;
 		background-size: cover;
+	}
+	&__parallax2 {
+		background-image: url("~@/assets/img/parallax2.jpg");
+
+		height: 160px;
+
+		background-attachment: fixed;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	//Contact
+
+	&__contact {
+		padding-right: 16px;
+		padding-left: 16px;
+		margin-top: 8%;
+		margin-bottom: 8%;
+		text-align: center;
+
+		&--title {
+			font-family: "Dancing Script", cursive;
+			font-size: 26px;
+		}
+		&__div {
+			background-color: yellow;
+
+			&__cardContact {
+				background-image: url("~@/assets/img/flowersBackground.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				padding: 8%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-content: space-between;
+			}
+		}
 	}
 }
 </style>
