@@ -16,7 +16,6 @@ export default {}
 
 <style lang="scss" scoped>
 .footer {
-	margin-top: 80%;
 	width: 100%;
 	height: 100%;
 	background-color: $primaryPink;

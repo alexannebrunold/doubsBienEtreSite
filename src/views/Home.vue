@@ -22,32 +22,34 @@
 		<div class="home__parallax2"></div>
 		<section class="home__contact">
 			<h1 class="home__contact--title">On reste en contact ?</h1>
-			<div class="home__contact__div">
-				<div class="home__contact__div__cardContact">
-					<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
-					<a href="tel:0102030405">01 02 03 04 05</a>
-					<span>
-						<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
-						<p>doubsbiênetre5@yahoo.fr</p>
-					</span>
-					<span>
-						<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
-						<p>doubsbiênetre5@yahoo.fr</p>
-					</span>
-				</div>
+			<!-- <img src="../assets/img/contact.jpg" alt="" /> -->
+			<div class="home__contact__cardContact">
+				<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
+				<a href="tel:0102030405">01 02 03 04 05</a>
+				<span>
+					<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
+					<p>doubsbiênetre5@yahoo.fr</p>
+				</span>
+				<span>
+					<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
+					<p>doubsbiênetre5@yahoo.fr</p>
+				</span>
 			</div>
 		</section>
+		<Footer />
 	</div>
 </template>
 
 <!-- <Button textButton="Lire la suite" /> -->
 <script>
 import Button from "@/components/Button.vue"
+import Footer from "@/components/Footer.vue"
 
 export default {
 	name: "Home",
 	components: {
 		Button,
+		Footer,
 	},
 }
 </script>
@@ -103,7 +105,7 @@ export default {
 		padding-left: 16px;
 		padding-top: 12%;
 		padding-bottom: 16%;
-		height: 100vh;
+		height: 86vh;
 		text-align: center;
 		font-family: "Josefin Sans", sans-serif;
 		@include tablet {
@@ -114,6 +116,7 @@ export default {
 			grid-template-rows: repeat(3, auto);
 			grid-column-gap: 0px;
 			grid-row-gap: 0px;
+			height: 100vh;
 		}
 		@include laptop {
 			padding-top: 6%;
@@ -199,31 +202,53 @@ export default {
 	}
 
 	//Contact
-
 	&__contact {
 		padding-right: 16px;
 		padding-left: 16px;
 		margin-top: 8%;
 		margin-bottom: 8%;
 		text-align: center;
-
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
 		&--title {
 			font-family: "Dancing Script", cursive;
 			font-size: 26px;
+			margin-bottom: 8%;
+			@include tablet {
+				font-size: 40px;
+			}
+			@include laptop {
+				font-size: 48px;
+				margin-bottom: 6%;
+			}
 		}
-		&__div {
-			background-color: yellow;
-
-			&__cardContact {
-				background-image: url("~@/assets/img/flowersBackground.jpg");
-				background-size: cover;
-				background-position: center;
-				background-repeat: no-repeat;
-				padding: 8%;
+		&__cardContact {
+			background-image: url("~@/assets/img/flowersBackground.jpg");
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			padding: 8%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-content: center;
+			height: 205px;
+			font-size: 12px;
+			@include tablet {
+				width: 469px;
+				height: 287px;
+				font-size: 18px;
+				padding: 5%;
+			}
+			@include laptop {
+			}
+			& span {
 				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				align-content: space-between;
+				flex-direction: row;
+				justify-content: space-around;
+				align-items: center;
 			}
 		}
 	}
