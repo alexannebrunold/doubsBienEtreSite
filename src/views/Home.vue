@@ -1,16 +1,17 @@
 <template>
-	<div class="home"></div>
+	<div class="home">
+		<!-- <Button textButton="Lire la suite" /> -->
+	</div>
 </template>
 
 //
 <script>
-// import Header from "@/components/Header.vue"
+// import Button from "@/components/Button.vue"
 
-// export default {
-// 	name: "Home",
-// 	components: {
-// 		Header,
-// 	},
-// }
-//
+export default {
+	name: "Home",
+	components: {
+		// Button,
+	},
+}
 </script>
