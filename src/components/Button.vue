@@ -24,9 +24,9 @@ export default {
 .button {
 	background-color: $secondaryPink;
 	font-family: "Josefin Sans", sans-serif;
-	padding: 6px 26px;
+	padding: 6px 16px;
 	color: $white;
-	font-size: 12px;
+	font-size: 8px;
 	border-radius: 8px;
 	border: 1px solid $secondaryPink;
 	cursor: pointer;

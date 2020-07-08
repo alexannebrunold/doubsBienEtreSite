@@ -17,6 +17,7 @@
 				ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit
 				Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
 			</p>
+			<Button textButton="Lire la suite" class="home__presentation--buttonNext" />
 		</section>
 		<div class="home__parallax"></div>
 	</div>
@@ -24,12 +25,12 @@
 
 <!-- <Button textButton="Lire la suite" /> -->
 <script>
-// import Button from "@/components/Button.vue"
+import Button from "@/components/Button.vue"
 
 export default {
 	name: "Home",
 	components: {
-		// Button,
+		Button,
 	},
 }
 </script>
@@ -48,15 +49,32 @@ export default {
 		background-position: center;
 		background-repeat: no-repeat;
 		padding-top: 8%;
+		@include laptop {
+			height: 90vh;
+		}
 		&--citation {
 			padding-right: 16px;
 			padding-left: 16px;
 			font-size: 20px;
+			@include tablet {
+				padding-right: 80px;
+				padding-left: 80px;
+				font-size: 24px;
+			}
+			@include laptop {
+				font-size: 36px;
+			}
 		}
 		&--auteur {
 			margin-top: 6%;
 			color: $secondaryPink;
 			font-size: 22px;
+			@include tablet {
+				font-size: 24px;
+			}
+			@include laptop {
+				font-size: 36px;
+			}
 		}
 	}
 
@@ -66,26 +84,78 @@ export default {
 		padding-right: 16px;
 		padding-left: 16px;
 		padding-top: 12%;
-		padding-bottom: 12%;
+		padding-bottom: 16%;
+		height: 100vh;
 		text-align: center;
 		font-family: "Josefin Sans", sans-serif;
+		@include tablet {
+			padding-right: 80px;
+			padding-left: 80px;
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: repeat(3, auto);
+			grid-column-gap: 0px;
+			grid-row-gap: 0px;
+		}
+		@include laptop {
+			padding-top: 6%;
+			padding-bottom: 16%;
+		}
 		&--title {
 			font-family: "Dancing Script", cursive;
 			margin-bottom: 16%;
 			font-size: 24px;
 			font-weight: bold;
 			text-decoration: underline;
+			@include tablet {
+				font-size: 24px;
+				grid-area: 1 / 2 / 2 / 3;
+				margin-bottom: 0;
+			}
+			@include laptop {
+				font-size: 48px;
+				margin-bottom: 6%;
+			}
 		}
 		&--avatar {
 			width: 204px;
 			height: 132px;
 			margin-bottom: 14%;
+			@include tablet {
+				width: 231px;
+				height: 227.02px;
+				grid-area: 2 / 1 / 3 / 2;
+				margin-bottom: 12%;
+			}
+			@include laptop {
+				width: 353px;
+				height: 346.91px;
+				margin-bottom: 0;
+			}
 		}
 		&--textPresentation {
 			font-size: 12px;
 			font-weight: lighter;
 			width: 72%;
 			margin: auto;
+			margin-bottom: 8%;
+			@include tablet {
+				font-size: 16px;
+				grid-area: 2 / 2 / 3 / 3;
+				margin-bottom: 12%;
+				font-size: 16px;
+			}
+			@include laptop {
+				font-size: 24px;
+				width: 100%;
+				margin: 0;
+				display: flex;
+				align-self: center;
+			}
+		}
+		&--buttonNext {
+			float: right;
+			grid-area: 3 / 2 / 4 / 3;
 		}
 	}
 
