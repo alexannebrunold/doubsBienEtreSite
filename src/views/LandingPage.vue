@@ -1,53 +1,58 @@
 <template>
-	<div class="home">
-		<section class="home__background">
-			<h1 class="home__background--citation">
+	<div class="landingPage">
+		<section class="landingPage__home">
+			<h1 class="landingPage__home--citation">
 				« Certains regardent la vase au fond de l'étang, d'autres contemplent la fleur de lotus à la
 				surface de l'eau, il s'agit d'un choix. »
 			</h1>
-			<h2 class="home__background--auteur">Le Dalaï Lama</h2>
+			<h2 class="landingPage__home--author">Le Dalaï Lama</h2>
 		</section>
-		<div class="home__parallax"></div>
-		<section class="home__presentation">
-			<h1 class="home__presentation--title">Qui suis-je ?</h1>
-			<img src="../assets/img/logo/avatar.svg" alt="" class="home__presentation--avatar" />
-			<p class="home__presentation--textPresentation">
+
+		<div class="landingPage--parallaxImage"></div>
+
+		<!-- Présentation -->
+		<section class="landingPage__presentation">
+			<h1 class="landingPage__presentation--title">Qui suis-je ?</h1>
+			<img src="../assets/img/logo/avatar.svg" alt="" class="landingPage__presentation--avatar" />
+			<p class="landingPage__presentation--textPresentation">
 				Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
 				nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut
 				ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit
 				Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
 			</p>
-			<Button textButton="Lire la suite" class="home__presentation--buttonNext" />
+			<Button textButton="Lire la suite" class="landingPage__presentation--buttonReadMore" />
 		</section>
-		<div class="home__parallax2"></div>
-		<section class="home__contact">
-			<h1 class="home__contact--title">On reste en contact ?</h1>
-			<div class="home__contact__cardImageContact">
+
+		<div class="landingPage--parallaxImage2"></div>
+
+		<!-- Contact -->
+		<section class="landingPage__contact">
+			<h1 class="landingPage__contact--title">On reste en contact ?</h1>
+
+			<div class="landingPage__contact__cardContact">
 				<img
 					src="../assets/img/contact.jpg"
 					alt=""
-					class="home__contact__cardImageContact--imageContact"
+					class="landingPage__contact__cardContact--imageContactLeft"
 				/>
-				<div class="home__contact__cardImageContact__cardContact">
+
+				<div class="landingPage__contact__cardContact--links">
 					<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
 					<a href="tel:0102030405">01 02 03 04 05</a>
-					<span>
+					<span class="landingPage__contact__cardContact--links__facebook">
 						<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
 						<p>doubsbiênetre5@yahoo.fr</p>
 					</span>
-					<span>
+					<span class="landingPage__contact__cardContact--links__instagram">
 						<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
 						<p>doubsbiênetre5@yahoo.fr</p>
 					</span>
 				</div>
-				<!-- <img
-					src="../assets/img/logo/rose.svg"
-					alt=""
-					class="home__contact__cardImageContact__cardContact--rose"
-				/> -->
 			</div>
-			<img src="../assets/img/arrow.svg" alt="" class="home__contact--arrow" />
+			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
+
+		<!-- Footer -->
 		<Footer />
 	</div>
 </template>
@@ -58,7 +63,7 @@ import Button from "@/components/Button.vue"
 import Footer from "@/components/Footer.vue"
 
 export default {
-	name: "Home",
+	name: "landingPage",
 	components: {
 		Button,
 		Footer,
@@ -67,10 +72,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.home {
+.landingPage {
 	width: 100vw;
 
-	&__background {
+	&__home {
 		height: 60vh;
 		font-family: "Dancing Script", cursive;
 		font-weight: bold;
@@ -97,7 +102,7 @@ export default {
 				font-size: 36px;
 			}
 		}
-		&--auteur {
+		&--author {
 			margin-top: 6%;
 			color: $secondaryPink;
 			font-size: 22px;
@@ -186,13 +191,13 @@ export default {
 				align-self: center;
 			}
 		}
-		&--buttonNext {
+		&--buttonReadMore {
 			float: right;
 			grid-area: 3 / 2 / 4 / 3;
 		}
 	}
 
-	&__parallax {
+	&--parallaxImage {
 		background-image: url("~@/assets/img/parallax.jpg");
 
 		height: 160px;
@@ -202,7 +207,7 @@ export default {
 		background-repeat: no-repeat;
 		background-size: cover;
 	}
-	&__parallax2 {
+	&--parallaxImage2 {
 		background-image: url("~@/assets/img/parallax2.jpg");
 
 		height: 160px;
@@ -249,19 +254,19 @@ export default {
 				margin-bottom: 6%;
 			}
 		}
-		&__cardImageContact {
+		&__cardContact {
 			display: flex;
 			flex-direction: row;
 			justify-content: center;
 			align-items: center;
 
-			&--imageContact {
+			&--imageContactLeft {
 				display: none;
 				@include tablet {
 					display: block;
 				}
 			}
-			&__cardContact {
+			&--links {
 				background-image: url("~@/assets/img/flowersBackground.jpg");
 				background-size: cover;
 				background-position: center;
@@ -309,7 +314,7 @@ export default {
 				}
 			}
 		}
-		&--arrow {
+		&--upArrow {
 			float: right;
 			height: 24px;
 			width: 24px;
