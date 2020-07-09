@@ -16,7 +16,6 @@ export default {}
 
 <style lang="scss" scoped>
 .footer {
-	margin-top: 80%;
 	width: 100%;
 	height: 100%;
 	background-color: $primaryPink;
@@ -37,7 +36,7 @@ export default {}
 		vertical-align: middle;
 		margin: auto;
 		color: $white;
-		font-family: "Dancing Script";
+		font-family: "Dancing Script", cursive;
 		font-weight: bold;
 		font-size: 24px;
 		@include tablet {

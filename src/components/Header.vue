@@ -27,7 +27,7 @@ export default {}
 		vertical-align: middle;
 		margin: auto;
 		color: $white;
-		font-family: "Dancing Script";
+		font-family: "Dancing Script", cursive;
 		font-weight: bold;
 		font-size: 32px;
 		@include tablet {
