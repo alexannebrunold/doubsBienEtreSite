@@ -22,19 +22,31 @@
 		<div class="home__parallax2"></div>
 		<section class="home__contact">
 			<h1 class="home__contact--title">On reste en contact ?</h1>
-			<!-- <img src="../assets/img/contact.jpg" alt="" /> -->
-			<div class="home__contact__cardContact">
-				<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
-				<a href="tel:0102030405">01 02 03 04 05</a>
-				<span>
-					<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
-					<p>doubsbiênetre5@yahoo.fr</p>
-				</span>
-				<span>
-					<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
-					<p>doubsbiênetre5@yahoo.fr</p>
-				</span>
+			<div class="home__contact__cardImageContact">
+				<img
+					src="../assets/img/contact.jpg"
+					alt=""
+					class="home__contact__cardImageContact--imageContact"
+				/>
+				<div class="home__contact__cardImageContact__cardContact">
+					<a href="mailto:#">doubsbiênetre5@yahoo.fr</a>
+					<a href="tel:0102030405">01 02 03 04 05</a>
+					<span>
+						<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
+						<p>doubsbiênetre5@yahoo.fr</p>
+					</span>
+					<span>
+						<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
+						<p>doubsbiênetre5@yahoo.fr</p>
+					</span>
+				</div>
+				<!-- <img
+					src="../assets/img/logo/rose.svg"
+					alt=""
+					class="home__contact__cardImageContact__cardContact--rose"
+				/> -->
 			</div>
+			<img src="../assets/img/arrow.svg" alt="" class="home__contact--arrow" />
 		</section>
 		<Footer />
 	</div>
@@ -208,10 +220,23 @@ export default {
 		margin-top: 8%;
 		margin-bottom: 8%;
 		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
+		height: 40vh;
+
+		@include tablet {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			height: 48vh;
+			padding-right: 80px;
+			padding-left: 80px;
+		}
+		@include laptop {
+			height: 100vh;
+			padding-top: 4%;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
 		&--title {
 			font-family: "Dancing Script", cursive;
 			font-size: 26px;
@@ -224,31 +249,78 @@ export default {
 				margin-bottom: 6%;
 			}
 		}
-		&__cardContact {
-			background-image: url("~@/assets/img/flowersBackground.jpg");
-			background-size: cover;
-			background-position: center;
-			background-repeat: no-repeat;
-			padding: 8%;
+		&__cardImageContact {
 			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			align-content: center;
-			height: 205px;
-			font-size: 12px;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+
+			&--imageContact {
+				display: none;
+				@include tablet {
+					display: block;
+				}
+			}
+			&__cardContact {
+				background-image: url("~@/assets/img/flowersBackground.jpg");
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+				padding: 8%;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-content: center;
+				height: 205px;
+				font-size: 12px;
+				font-family: "Josefin Sans", sans-serif;
+				position: relative;
+				width: 90%;
+				& a {
+					text-decoration: none;
+					color: $black;
+					&:hover {
+						color: $secondaryPink;
+					}
+				}
+				@include tablet {
+					width: 469px;
+					height: 287px;
+					font-size: 18px;
+					background-image: url("~@/assets/img/test.svg");
+				}
+				@include laptop {
+					justify-content: space-between;
+				}
+				& span {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-around;
+					align-items: center;
+					@include tablet {
+						justify-content: center;
+						& p {
+							margin-right: 10%;
+						}
+						& img {
+							padding-right: 6%;
+						}
+					}
+				}
+			}
+		}
+		&--arrow {
+			float: right;
+			height: 24px;
+			width: 24px;
+			margin-top: 4%;
+			margin-bottom: 4%;
 			@include tablet {
-				width: 469px;
-				height: 287px;
-				font-size: 18px;
-				padding: 5%;
-			}
-			@include laptop {
-			}
-			& span {
+				height: 32px;
+				width: 32px;
 				display: flex;
 				flex-direction: row;
-				justify-content: space-around;
-				align-items: center;
+				align-self: flex-end;
 			}
 		}
 	}
