@@ -51,13 +51,15 @@
 			</div>
 			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
+
 		<CardService
-			v-for="item in items"
+			v-for="(logo, index) in logos"
 			:key="index"
-			:src="item[index].image"
-			textTitleService="Coucou"
-			textExplicationService="Bonjour"
+			:src="logo.image"
+			:textTitleService="logo.textTitleService"
+			:textExplicationService="logo.textExplicationService"
 		/>
+
 		<!-- Footer -->
 		<Footer />
 	</div>
@@ -68,6 +70,9 @@
 import Button from "@/components/Button.vue"
 import Footer from "@/components/Footer.vue"
 import CardService from "@/components/CardService.vue"
+import reiki from "@/assets/img/logo/reiki.svg"
+import magnetism from "@/assets/img/logo/magnetism.svg"
+import coach from "@/assets/img/logo/coach.svg"
 export default {
 	name: "landingPage",
 	components: {
@@ -77,15 +82,21 @@ export default {
 	},
 	data() {
 		return {
-			items: [
+			logos: [
 				{
-					image: require("../assets/img/logo/reiki.svg"),
+					image: reiki,
+					textTitleService: "Mon texte",
+					textExplicationService: "Coucou",
 				},
 				{
-					image: require("../assets/img/logo/magnetism.svg"),
+					image: magnetism,
+					textTitleService: "Mon texte",
+					textExplicationService: "Coucou",
 				},
 				{
-					image: require("../assets/img/logo/coach.svg"),
+					image: coach,
+					textTitleService: "Mon texte",
+					textExplicationService: "Coucou",
 				},
 			],
 		}
