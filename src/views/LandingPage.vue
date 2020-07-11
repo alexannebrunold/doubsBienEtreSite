@@ -53,8 +53,8 @@
 		</section>
 		<CardService
 			v-for="item in items"
-			:key="item.image"
-			:src="item.image"
+			:key="index"
+			:src="item[index].image"
 			textTitleService="Coucou"
 			textExplicationService="Bonjour"
 		/>
