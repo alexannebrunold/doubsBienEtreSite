@@ -64,7 +64,11 @@
 			</div>
 			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
-
+		<!-- test -->
+		<section class="landingPage__yo">
+			<h1 class="landingPage__yo--title">Mes services</h1>
+			<CardDiplome :textTitleDiplome="cc" :textExplicationDiplome="y" />
+		</section>
 		<!-- Footer -->
 		<Footer />
 	</div>
@@ -75,6 +79,7 @@
 import Button from "@/components/Button.vue"
 import Footer from "@/components/Footer.vue"
 import CardService from "@/components/CardService.vue"
+import CardDiplome from "@/components/CardDiplome.vue"
 import reiki from "@/assets/img/logo/reiki.svg"
 import magnetism from "@/assets/img/logo/magnetism.svg"
 import coach from "@/assets/img/logo/coach.svg"
@@ -84,9 +89,12 @@ export default {
 		Button,
 		Footer,
 		CardService,
+		CardDiplome,
 	},
 	data() {
 		return {
+			cc: "Diplôme de Lorem",
+			y: "Ultima Syriarum est Palaestina per intervalla magna",
 			logos: [
 				{
 					image: reiki,
@@ -405,6 +413,9 @@ export default {
 				margin-bottom: 6%;
 			}
 		}
+	}
+	&__yo {
+		width: 100vw;
 	}
 }
 </style>
