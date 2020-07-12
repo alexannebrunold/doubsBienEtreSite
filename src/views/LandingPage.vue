@@ -33,7 +33,7 @@
 				:src="logo.image"
 				:textTitleService="logo.textTitleService"
 				:textExplicationService="logo.textExplicationService"
-				:leStyle="{ backgroundColor: logo.color, width: widthe + '%' }"
+				:leStyle="{ backgroundColor: logo.color }"
 			/>
 		</section>
 		<!-- Contact -->
@@ -85,7 +85,6 @@ export default {
 	},
 	data() {
 		return {
-			widthe: "80",
 			logos: [
 				{
 					image: reiki,
