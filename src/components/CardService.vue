@@ -1,6 +1,9 @@
 <template>
 	<div class="cardService">
-		<img :src="src" alt="" class="cardService--image" />
+		<div :style="leStyle">
+			<img :src="src" alt="" class="cardService--image" />
+		</div>
+
 		<h1 class="cardService--title">{{ textTitleService }}</h1>
 		<p class="cardService--explication">{{ textExplicationService }}</p>
 		<p class="cardService--learnMore">En savoir plus --></p>
@@ -16,6 +19,7 @@ export default {
 		textTitleService: String,
 		textExplicationService: String,
 		src: String,
+		leStyle: Object,
 	},
 }
 </script>

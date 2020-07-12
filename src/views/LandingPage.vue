@@ -25,6 +25,17 @@
 
 		<div class="landingPage--parallaxImage2"></div>
 
+		<!-- Services -->
+		<section class="landingPage__services">
+			<CardService
+				v-for="(logo, index) in logos"
+				:key="index"
+				:src="logo.image"
+				:textTitleService="logo.textTitleService"
+				:textExplicationService="logo.textExplicationService"
+				:leStyle="{ backgroundColor: logo.color, width: widthe + '%' }"
+			/>
+		</section>
 		<!-- Contact -->
 		<section class="landingPage__contact">
 			<h1 class="landingPage__contact--title">On reste en contact ?</h1>
@@ -52,14 +63,6 @@
 			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
 
-		<CardService
-			v-for="(logo, index) in logos"
-			:key="index"
-			:src="logo.image"
-			:textTitleService="logo.textTitleService"
-			:textExplicationService="logo.textExplicationService"
-		/>
-
 		<!-- Footer -->
 		<Footer />
 	</div>
@@ -82,21 +85,28 @@ export default {
 	},
 	data() {
 		return {
+			widthe: "80",
 			logos: [
 				{
 					image: reiki,
-					textTitleService: "Mon texte",
-					textExplicationService: "Coucou",
+					textTitleService: "Reiki",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(162, 197, 94, 0.56)",
 				},
 				{
 					image: magnetism,
-					textTitleService: "Mon texte",
-					textExplicationService: "Coucou",
+					textTitleService: "Magrétisme",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(192, 56, 92, 0.46)",
 				},
 				{
 					image: coach,
-					textTitleService: "Mon texte",
-					textExplicationService: "Coucou",
+					textTitleService: "Coaching",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(40, 40, 40, 0.16)",
 				},
 			],
 		}
