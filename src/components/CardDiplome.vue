@@ -1,12 +1,17 @@
 <template>
 	<div class="cardDiplome">
-		<h1 class="cardDiplome--title">{{ textTitleDiplome }}</h1>
-		<p class="cardDiplome--explication">{{ textExplicationDiplome }}</p>
-		<ul>
-			<li>1</li>
-			<li>1</li>
-			<li>1</li>
-		</ul>
+		<div class="cardDiplome__text">
+			<h1 class="cardDiplome__text--title">{{ textTitleDiplome }}</h1>
+			<p class="cardDiplome__text--explication">{{ textExplicationDiplome }}</p>
+		</div>
+		<div>
+			<ul>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+				<li>1</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -18,8 +23,6 @@ export default {
 	props: {
 		textTitleDiplome: String,
 		textExplicationDiplome: String,
-		src: String,
-		leStyle: Object,
 	},
 }
 </script>
@@ -27,18 +30,37 @@ export default {
 <style lang="scss" scoped>
 .cardDiplome {
 	border: 2px solid $secondaryLightPink;
-	padding: 8%;
+	padding: 2%;
 	background-color: $white;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	justify-content: space-around;
-	height: 240px;
-	width: 240px;
-	&--title {
-		font-size: 18px;
+	height: 216px;
+	width: 200px;
+	text-align: center;
+	font-family: "Josefin Sans", sans-serif;
+	border-radius: 6px;
+	align-items: center;
+	&__text {
+		&--title {
+			font-size: 18px;
+		}
+		&--explication {
+			font-size: 12px;
+			width: 60%;
+			margin: auto;
+			font-weight: lighter;
+		}
 	}
-	&--explication {
-		font-size: 12px;
+	& li::before {
+		content: "\2022";
+		color: $secondary;
+		font-weight: bold;
+		display: inline-block;
+		width: 1em;
+		margin-left: -1em;
+		font-size: 1em;
 	}
 }
 </style>

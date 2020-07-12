@@ -67,7 +67,12 @@
 		<!-- test -->
 		<section class="landingPage__yo">
 			<h1 class="landingPage__yo--title">Mes services</h1>
-			<CardDiplome :textTitleDiplome="cc" :textExplicationDiplome="y" />
+			<CardDiplome
+				v-for="(diplome, index) in diplome"
+				:key="index"
+				:textTitleDiplome="diplome.title"
+				:textExplicationDiplome="diplome.description"
+			/>
 		</section>
 		<!-- Footer -->
 		<Footer />
@@ -93,14 +98,12 @@ export default {
 	},
 	data() {
 		return {
-			cc: "Diplôme de Lorem",
-			y: "Ultima Syriarum est Palaestina per intervalla magna",
 			logos: [
 				{
 					image: reiki,
 					textTitleService: "Reiki",
 					textExplicationService:
-						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+						"Ultima Sdescriptionriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(162, 197, 94, 0.56)",
 				},
 				{
@@ -116,6 +119,20 @@ export default {
 					textExplicationService:
 						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(40, 40, 40, 0.16)",
+				},
+			],
+			diplome: [
+				{
+					title: "Diplôme de Lorem",
+					description: "Ultima Syriarum est Palaestina per intervalla magna",
+				},
+				{
+					title: "Diplôme de Lorem",
+					description: "Ultima Syriarum est Palaestina per intervalla magna",
+				},
+				{
+					title: "Diplôme de Lorem",
+					description: "Ultima Syriarum est Palaestina per intervalla magna",
 				},
 			],
 		}
@@ -416,6 +433,9 @@ export default {
 	}
 	&__yo {
 		width: 100vw;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 }
 </style>
