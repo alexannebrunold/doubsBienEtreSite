@@ -1,12 +1,10 @@
 <template>
 	<div class="cardService">
-		<div class="cardService__around">
-			<img :src="src" alt="" class="cardService__around--image" :style="leStyle" />
-			<div class="cardService__around__text">
-				<h1 class="cardService__around__text--title">{{ textTitleService }}</h1>
-				<p class="cardService__around__text--explication">{{ textExplicationService }}</p>
-				<p class="cardService__around__text--learnMore">En savoir plus --></p>
-			</div>
+		<img :src="src" alt="" class="cardService--image" :style="leStyle" />
+		<div class="cardService__text">
+			<h1 class="cardService__text--title">{{ textTitleService }}</h1>
+			<p class="cardService__text--explication">{{ textExplicationService }}</p>
+			<p class="cardService__text--learnMore">En savoir plus --></p>
 		</div>
 	</div>
 </template>
@@ -28,36 +26,60 @@ export default {
 <style lang="scss" scoped>
 .cardService {
 	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
 
-	height: 24vh;
-	&__around {
+	&--image {
+		width: 86px;
+		height: 80px;
+		padding: 2%;
+		border-radius: 8px;
+		text-align: center;
+
+		@include tablet {
+			width: 116px;
+			height: 108px;
+		}
+		@include laptop {
+			width: 164px;
+			height: 142px;
+		}
+	}
+	&__text {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		text-align: center;
-		justify-content: space-around;
-		&--image {
-			width: 86px;
-			height: 80px;
-			padding: 2%;
-			border-radius: 8px;
-			text-align: center;
+		justify-content: space-evenly;
+		font-family: "Josefin Sans", sans-serif;
+		height: 160px;
+		width: 40%;
+		@include laptop {
+			height: 200px;
+			width: 80%;
+		}
+		&--title {
+			font-weight: 400;
+			font-style: 18px;
+			text-transform: uppercase;
 			@include tablet {
-				width: 116px;
-				height: 108px;
+				font-size: 26px;
 			}
 			@include laptop {
-				width: 164px;
-				height: 142px;
+				font-size: 32px;
 			}
 		}
-		&__text {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			height: 100px;
-			width: 20%;
+		&--explication {
+			font-weight: lighter;
 			font-size: 12px;
+
+			@include tablet {
+				font-size: 18px;
+			}
+			@include laptop {
+				font-size: 20px;
+			}
 		}
 	}
 }

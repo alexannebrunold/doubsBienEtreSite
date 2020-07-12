@@ -27,6 +27,7 @@
 
 		<!-- Services -->
 		<section class="landingPage__services">
+			<h1 class="landingPage__services--title">Mes services</h1>
 			<CardService
 				v-for="(logo, index) in logos"
 				:key="index"
@@ -36,6 +37,7 @@
 				:leStyle="{ backgroundColor: logo.color }"
 			/>
 		</section>
+		<div class="landingPage--parallaxImage2"></div>
 		<!-- Contact -->
 		<section class="landingPage__contact">
 			<h1 class="landingPage__contact--title">On reste en contact ?</h1>
@@ -95,7 +97,7 @@ export default {
 				},
 				{
 					image: magnetism,
-					textTitleService: "Magrétisme",
+					textTitleService: "Magnétisme",
 					textExplicationService:
 						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(192, 56, 92, 0.46)",
@@ -368,6 +370,39 @@ export default {
 				display: flex;
 				flex-direction: row;
 				align-self: flex-end;
+			}
+		}
+	}
+	&__services {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		padding-left: 80px;
+		padding-right: 80px;
+		margin-top: 2%;
+		@include tablet {
+			height: 40vh;
+			flex-direction: row;
+		}
+		@include laptop {
+			height: 90vh;
+		}
+		&--title {
+			font-family: "Dancing Script", cursive;
+			margin-bottom: 16%;
+			font-size: 24px;
+			font-weight: bold;
+			text-decoration: underline;
+			@include tablet {
+				font-size: 24px;
+				grid-area: 1 / 2 / 2 / 3;
+				margin-bottom: 0;
+			}
+			@include laptop {
+				font-size: 48px;
+				margin-bottom: 6%;
 			}
 		}
 	}
