@@ -25,6 +25,19 @@
 
 		<div class="landingPage--parallaxImage2"></div>
 
+		<!-- Services -->
+		<section class="landingPage__services">
+			<h1 class="landingPage__services--title">Mes services</h1>
+			<CardService
+				v-for="(logo, index) in logos"
+				:key="index"
+				:src="logo.image"
+				:textTitleService="logo.textTitleService"
+				:textExplicationService="logo.textExplicationService"
+				:leStyle="{ backgroundColor: logo.color }"
+			/>
+		</section>
+		<div class="landingPage--parallaxImage2"></div>
 		<!-- Contact -->
 		<section class="landingPage__contact">
 			<h1 class="landingPage__contact--title">On reste en contact ?</h1>
@@ -51,13 +64,7 @@
 			</div>
 			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
-		<CardService
-			v-for="item in items"
-			:key="index"
-			:src="item[index].image"
-			textTitleService="Coucou"
-			textExplicationService="Bonjour"
-		/>
+
 		<!-- Footer -->
 		<Footer />
 	</div>
@@ -68,6 +75,9 @@
 import Button from "@/components/Button.vue"
 import Footer from "@/components/Footer.vue"
 import CardService from "@/components/CardService.vue"
+import reiki from "@/assets/img/logo/reiki.svg"
+import magnetism from "@/assets/img/logo/magnetism.svg"
+import coach from "@/assets/img/logo/coach.svg"
 export default {
 	name: "landingPage",
 	components: {
@@ -77,15 +87,27 @@ export default {
 	},
 	data() {
 		return {
-			items: [
+			logos: [
 				{
-					image: require("../assets/img/logo/reiki.svg"),
+					image: reiki,
+					textTitleService: "Reiki",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(162, 197, 94, 0.56)",
 				},
 				{
-					image: require("../assets/img/logo/magnetism.svg"),
+					image: magnetism,
+					textTitleService: "Magnétisme",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(192, 56, 92, 0.46)",
 				},
 				{
-					image: require("../assets/img/logo/coach.svg"),
+					image: coach,
+					textTitleService: "Coaching",
+					textExplicationService:
+						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					color: "rgba(40, 40, 40, 0.16)",
 				},
 			],
 		}
@@ -348,6 +370,39 @@ export default {
 				display: flex;
 				flex-direction: row;
 				align-self: flex-end;
+			}
+		}
+	}
+	&__services {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		padding-left: 80px;
+		padding-right: 80px;
+		margin-top: 2%;
+		@include tablet {
+			height: 40vh;
+			flex-direction: row;
+		}
+		@include laptop {
+			height: 90vh;
+		}
+		&--title {
+			font-family: "Dancing Script", cursive;
+			margin-bottom: 16%;
+			font-size: 24px;
+			font-weight: bold;
+			text-decoration: underline;
+			@include tablet {
+				font-size: 24px;
+				grid-area: 1 / 2 / 2 / 3;
+				margin-bottom: 0;
+			}
+			@include laptop {
+				font-size: 48px;
+				margin-bottom: 6%;
 			}
 		}
 	}
