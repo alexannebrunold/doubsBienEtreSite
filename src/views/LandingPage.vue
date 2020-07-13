@@ -75,6 +75,7 @@
 import Button from "@/components/Button.vue"
 import Footer from "@/components/Footer.vue"
 import CardService from "@/components/CardService.vue"
+
 import reiki from "@/assets/img/logo/reiki.svg"
 import magnetism from "@/assets/img/logo/magnetism.svg"
 import coach from "@/assets/img/logo/coach.svg"
@@ -92,7 +93,7 @@ export default {
 					image: reiki,
 					textTitleService: "Reiki",
 					textExplicationService:
-						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+						"Ultima Sdescriptionriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(162, 197, 94, 0.56)",
 				},
 				{
@@ -111,6 +112,11 @@ export default {
 				},
 			],
 		}
+	},
+	computed: {
+		listee() {
+			return console.log(this.diplome.liste.length + "cc")
+		},
 	},
 }
 </script>
