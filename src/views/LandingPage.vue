@@ -68,10 +68,11 @@
 		<section class="landingPage__yo">
 			<h1 class="landingPage__yo--title">Mes services</h1>
 			<CardDiplome
-				v-for="(diplome, index) in diplome"
+				v-for="(diplome, index) in diplomes"
 				:key="index"
 				:textTitleDiplome="diplome.title"
 				:textExplicationDiplome="diplome.description"
+				:names="diplome.names"
 			/>
 		</section>
 		<!-- Footer -->
@@ -121,21 +122,29 @@ export default {
 					color: "rgba(40, 40, 40, 0.16)",
 				},
 			],
-			diplome: [
+			diplomes: [
 				{
 					title: "Diplôme de Lorem",
 					description: "Ultima Syriarum est Palaestina per intervalla magna",
+					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 				{
 					title: "Diplôme de Lorem",
 					description: "Ultima Syriarum est Palaestina per intervalla magna",
+					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 				{
 					title: "Diplôme de Lorem",
 					description: "Ultima Syriarum est Palaestina per intervalla magna",
+					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 			],
 		}
+	},
+	computed: {
+		listee() {
+			return console.log(this.diplome.liste.length + "cc")
+		},
 	},
 }
 </script>

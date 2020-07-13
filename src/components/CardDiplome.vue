@@ -6,10 +6,7 @@
 		</div>
 		<div>
 			<ul>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
-				<li>1</li>
+				<li v-for="(name, index) in names" :key="index">{{ name }}</li>
 			</ul>
 		</div>
 	</div>
@@ -23,6 +20,7 @@ export default {
 	props: {
 		textTitleDiplome: String,
 		textExplicationDiplome: String,
+		names: Array,
 	},
 }
 </script>
