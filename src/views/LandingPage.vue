@@ -64,16 +64,11 @@
 			</div>
 			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
 		</section>
-
-		<!-- Footer -->
-		<Footer />
 	</div>
 </template>
 
-<!-- <Button textButton="Lire la suite" /> -->
 <script>
 import Button from "@/components/Button.vue"
-import Footer from "@/components/Footer.vue"
 import CardService from "@/components/CardService.vue"
 
 import reiki from "@/assets/img/logo/reiki.svg"
@@ -83,7 +78,6 @@ export default {
 	name: "landingPage",
 	components: {
 		Button,
-		Footer,
 		CardService,
 	},
 	data() {
