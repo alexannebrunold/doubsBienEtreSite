@@ -1,14 +1,21 @@
 <template>
 	<section class="aboutMe">
-		<h1 class="aboutMe--title">Mes services</h1>
-		<img src="../assets/img/logo/avatar.svg" alt="" class="aboutMe--avatar" />
-		<p class="aboutMe--textPresentation">
-			Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
-			nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut ad
-			perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit Herodes,
-			et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
-		</p>
-		<h1 class="aboutMe--title">Formation</h1>
+		<div class="aboutMe__whoIs">
+			<h1 class="aboutMe__whoIs--title">Mes services</h1>
+			<div class="aboutMe__whoIs--flex">
+				<img src="../assets/img/logo/avatar.svg" alt="" class="aboutMe__whoIs--flex--avatar" />
+				<p class="aboutMe__whoIs--flex--textPresentation">
+					Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
+					nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim
+					velut ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis
+					exaedificavit Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo
+					superiore exstructas Ultima Syriarum est Palaestina per intervalla magna protenta, cultis
+					abundans terris et nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed
+					sibi vicissim velut ad
+				</p>
+			</div>
+		</div>
+		<h1 class="aboutMe__whoIs--title">Formation</h1>
 		<div class="aboutMe--card">
 			<CardDiplome
 				v-for="(diplome, index) in diplomes"
@@ -62,53 +69,65 @@ export default {
 		padding-right: 80px;
 		padding-left: 80px;
 	}
-	&--title {
-		font-family: "Dancing Script", cursive;
-		font-size: 26px;
-		margin-bottom: 8%;
+	&__whoIs {
+		padding-top: 12%;
+		padding-bottom: 16%;
 		text-align: center;
-		@include tablet {
-			font-size: 40px;
-		}
+		font-family: "Josefin Sans", sans-serif;
+
 		@include laptop {
-			font-size: 48px;
-			margin-bottom: 6%;
+			padding-top: 6%;
+			padding-bottom: 16%;
 		}
-	}
-	&--avatar {
-		width: 204px;
-		height: 132px;
-		margin-bottom: 14%;
-		@include tablet {
-			width: 231px;
-			height: 227.02px;
-			grid-area: 2 / 1 / 3 / 2;
-			margin-bottom: 12%;
+		&--title {
+			font-family: "Dancing Script", cursive;
+			font-size: 26px;
+			margin-bottom: 8%;
+			text-align: center;
+			@include tablet {
+				font-size: 40px;
+			}
+			@include laptop {
+				font-size: 48px;
+			}
 		}
-		@include laptop {
-			width: 353px;
-			height: 346.91px;
-			margin-bottom: 0;
-		}
-	}
-	&--textPresentation {
-		font-size: 12px;
-		font-weight: lighter;
-		width: 72%;
-		margin: auto;
-		margin-bottom: 8%;
-		@include tablet {
-			font-size: 16px;
-			grid-area: 2 / 2 / 3 / 3;
-			margin-bottom: 12%;
-			font-size: 16px;
-		}
-		@include laptop {
-			font-size: 24px;
-			width: 100%;
-			margin: 0;
+		&--flex {
 			display: flex;
-			align-self: center;
+			flex-direction: column;
+			align-items: center;
+			@include tablet {
+				flex-direction: row;
+				justify-content: space-around;
+			}
+
+			&--avatar {
+				width: 204px;
+				height: 132px;
+
+				@include tablet {
+					width: 231px;
+					height: 227.02px;
+				}
+				@include laptop {
+					width: 353px;
+					height: 346.91px;
+					margin-bottom: 0;
+				}
+			}
+			&--textPresentation {
+				font-size: 12px;
+				font-weight: lighter;
+				width: 80%;
+				@include tablet {
+					font-size: 16px;
+
+					font-size: 16px;
+				}
+				@include laptop {
+					font-size: 24px;
+					width: 48%;
+				}
+			}
 		}
 	}
 	&--card {
@@ -116,9 +135,11 @@ export default {
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
+
 		@include tablet {
 			flex-direction: row;
 			justify-content: space-around;
+			height: 80vh;
 		}
 	}
 }
