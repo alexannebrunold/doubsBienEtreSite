@@ -4,9 +4,11 @@
 			<h1 class="cardDiplome__text--title">{{ textTitleDiplome }}</h1>
 			<p class="cardDiplome__text--explication">{{ textExplicationDiplome }}</p>
 		</div>
-		<div>
+		<div class="cardDiplome__list">
 			<ul>
-				<li v-for="(name, index) in names" :key="index">{{ name }}</li>
+				<li v-for="(name, index) in names" :key="index" class="cardDiplome__list--li">
+					{{ name }}
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -40,15 +42,25 @@ export default {
 	font-family: "Josefin Sans", sans-serif;
 	border-radius: 6px;
 	align-items: center;
+	@include laptop {
+		width: 332px;
+		height: 408px;
+	}
 	&__text {
 		&--title {
 			font-size: 18px;
+			@include laptop {
+				font-size: 24px;
+			}
 		}
 		&--explication {
 			font-size: 12px;
 			width: 60%;
 			margin: auto;
 			font-weight: lighter;
+			@include laptop {
+				font-size: 20px;
+			}
 		}
 	}
 	& li::before {
@@ -59,6 +71,15 @@ export default {
 		width: 1em;
 		margin-left: -1em;
 		font-size: 1em;
+	}
+	&__list {
+		&--li {
+			font-size: 14px;
+			@include laptop {
+				font-size: 20px;
+				margin-bottom: 8%;
+			}
+		}
 	}
 }
 </style>
