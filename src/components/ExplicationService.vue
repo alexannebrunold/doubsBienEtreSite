@@ -1,16 +1,20 @@
 <template>
 	<div class="explicationService">
 		<h1 class="explicationService--title">{{ currentPage.title }}</h1>
-		<h2 class="explicationService--question">{{ currentPage.unQ }}</h2>
+		<h2 class="explicationService--question">{{ currentPage.whatIsIt }}</h2>
 		<div class="explicationService__flex">
-			<p class="explicationService__flex--text"></p>
-			<img src="" alt="" />
+			<img src="../assets/img/testImg.jpg" alt="" />
+			<p class="explicationService__flex--text">
+				{{ currentPage.textWhat }}
+			</p>
 		</div>
-		<h2 class="explicationService--question">{{ currentPage.deuxQ }}</h2>
-		<p class="explicationService--text"></p>
+
+		<h2 class="explicationService--question">{{ currentPage.forWhoWhat }}</h2>
+		<p class="explicationService--text">{{ currentPage.forPeople }}</p>
 		<h2 class="explicationService--question">{{ bienfaits }}</h2>
 		<ul>
 			<li>Bonjour</li>
+			<li>Coucou</li>
 		</ul>
 		<Button />
 	</div>
@@ -30,7 +34,6 @@ export default {
 		Button,
 	},
 	props: {
-		// title: String,
 		firstQuestion: String,
 		secondQuestion: String,
 		currentPage: Object,
@@ -46,27 +49,27 @@ export default {
 	padding-left: 16px;
 	&--title {
 		font-family: "Dancing Script", cursive;
-		font-size: 26px;
+		font-size: 20px;
 		margin-bottom: 8%;
 		text-align: center;
 		@include tablet {
-			font-size: 40px;
+			font-size: 24px;
 		}
 		@include laptop {
 			font-size: 48px;
 		}
 	}
 	&--question {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	&--text {
-		font-size: 16px;
+		font-size: 12px;
 		text-align: left;
 		font-weight: 300;
 	}
 	&__flex {
 		&--text {
-			font-size: 16px;
+			font-size: 12px;
 			text-align: left;
 			font-weight: 300;
 		}

@@ -20,4 +20,8 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+	width: 100vw;
+}
+</style>

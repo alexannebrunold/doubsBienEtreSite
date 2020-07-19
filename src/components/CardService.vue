@@ -95,6 +95,9 @@ export default {
 				font-size: 20px;
 			}
 		}
+		&--learnMore {
+			cursor: pointer;
+		}
 	}
 }
 </style>
