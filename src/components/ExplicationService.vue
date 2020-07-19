@@ -1,30 +1,14 @@
 <template>
 	<div class="explicationService">
-		<h1 class="explicationService--title">Le Reiki {{ title }}</h1>
-		<h2 class="explicationService--question">{{ firstQuestion }}</h2>
+		<h1 class="explicationService--title">{{ currentPage.title }}</h1>
+		<h2 class="explicationService--question">{{ currentPage.unQ }}</h2>
 		<div class="explicationService__flex">
-			<p class="explicationService__flex--text">
-				Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
-				nitidis et civitates habens quasdam Ultima Syriarum est Palaestina per intervalla magna
-				protenta, cultis abundans terris et nitidis et civitates habens quasdam Ultima Syriarum est
-				Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates
-				habens quasdamUltima Syriarum est Palaestina per intervalla magna protenta, cultis abundans
-				terris et nitidis et civitates habens quasdamUltima Syriarum est Palaestina per intervalla
-				magna protenta, cultis abundans terris et nitidis et civitates habens quasdam
-			</p>
+			<p class="explicationService__flex--text"></p>
 			<img src="" alt="" />
 		</div>
-		<h2>{{ secondQuestion }}</h2>
-		<p>
-			Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
-			nitidis et civitates habens quasdam Ultima Syriarum est Palaestina per intervalla magna
-			protenta, cultis abundans terris et nitidis et civitates habens quasdam Ultima Syriarum est
-			Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates
-			habens quasdamUltima Syriarum est Palaestina per intervalla magna protenta, cultis abundans
-			terris et nitidis et civitates habens quasdamUltima Syriarum est Palaestina per intervalla
-			magna protenta, cultis abundans terris et nitidis et civitates habens quasdam
-		</p>
-		<h2>{{ bienfaits }}</h2>
+		<h2 class="explicationService--question">{{ currentPage.deuxQ }}</h2>
+		<p class="explicationService--text"></p>
+		<h2 class="explicationService--question">{{ bienfaits }}</h2>
 		<ul>
 			<li>Bonjour</li>
 		</ul>
@@ -39,8 +23,6 @@ export default {
 	name: "PrimaryButton",
 	data() {
 		return {
-			firstQuestion: "Qu'est-ce que c'est",
-			secondQuestion: "Pour qui ? Pour quoi ?",
 			bienfaits: "Les bienfaits",
 		}
 	},
@@ -48,14 +30,46 @@ export default {
 		Button,
 	},
 	props: {
-		title: String,
-
-		Page: String,
+		// title: String,
+		firstQuestion: String,
+		secondQuestion: String,
+		currentPage: Object,
 	},
-	mounted() {
-		console.log("aaaa" + this.$router.params)
-	},
+	mounted() {},
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.explicationService {
+	font-family: "Josefin Sans", sans-serif;
+	padding-right: 16px;
+	padding-left: 16px;
+	&--title {
+		font-family: "Dancing Script", cursive;
+		font-size: 26px;
+		margin-bottom: 8%;
+		text-align: center;
+		@include tablet {
+			font-size: 40px;
+		}
+		@include laptop {
+			font-size: 48px;
+		}
+	}
+	&--question {
+		font-size: 20px;
+	}
+	&--text {
+		font-size: 16px;
+		text-align: left;
+		font-weight: 300;
+	}
+	&__flex {
+		&--text {
+			font-size: 16px;
+			text-align: left;
+			font-weight: 300;
+		}
+	}
+}
+</style>

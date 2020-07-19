@@ -4,7 +4,7 @@
 		<div class="cardService__text">
 			<h1 class="cardService__text--title">{{ textTitleService }}</h1>
 			<p class="cardService__text--explication">{{ textExplicationService }}</p>
-			<p class="cardService__text--learnMore">En savoir plus --></p>
+			<p class="cardService__text--learnMore" @click="switchPage">En savoir plus --></p>
 		</div>
 	</div>
 </template>
@@ -19,6 +19,20 @@ export default {
 		textExplicationService: String,
 		src: String,
 		leStyle: Object,
+		linkRedirection: String,
+	},
+	methods: {
+		switchPage: function() {
+			return this.$router.push({
+				name: "Services",
+				params: {
+					name: this.linkRedirection,
+				},
+			})
+		},
+	},
+	mounted() {
+		console.error("aaaa" + this.linkRedirection)
 	},
 }
 </script>

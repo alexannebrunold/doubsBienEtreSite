@@ -69,6 +69,20 @@ export default {
 		padding-right: 80px;
 		padding-left: 80px;
 	}
+
+	&--title {
+		font-family: "Dancing Script", cursive;
+		font-size: 26px;
+		margin-bottom: 8%;
+		text-align: center;
+		@include tablet {
+			font-size: 40px;
+		}
+		@include laptop {
+			font-size: 48px;
+		}
+	}
+
 	&__whoIs {
 		padding-top: 12%;
 		padding-bottom: 16%;

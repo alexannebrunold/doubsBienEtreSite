@@ -35,6 +35,7 @@
 				:textTitleService="logo.textTitleService"
 				:textExplicationService="logo.textExplicationService"
 				:leStyle="{ backgroundColor: logo.color }"
+				:linkRedirection="logo.linkRedirection"
 			/>
 		</section>
 		<div class="landingPage--parallaxImage2"></div>
@@ -89,13 +90,15 @@ export default {
 					textExplicationService:
 						"Ultima Sdescriptionriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(162, 197, 94, 0.56)",
+					linkRedirection: "reiki",
 				},
 				{
 					image: magnetism,
-					textTitleService: "Magnétisme",
+					textTitleService: "Magnetisme",
 					textExplicationService:
 						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(192, 56, 92, 0.46)",
+					linkRedirection: "magnetisme",
 				},
 				{
 					image: coach,
@@ -103,6 +106,7 @@ export default {
 					textExplicationService:
 						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
 					color: "rgba(40, 40, 40, 0.16)",
+					linkRedirection: "coaching",
 				},
 			],
 		}
