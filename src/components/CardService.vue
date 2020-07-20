@@ -4,7 +4,15 @@
 		<div class="cardService__text">
 			<h1 class="cardService__text--title">{{ textTitleService }}</h1>
 			<p class="cardService__text--explication">{{ textExplicationService }}</p>
-			<p class="cardService__text--learnMore">En savoir plus --></p>
+			<p class="cardService__text--learnMore" @click="switchPage" @mouseenter="switchImg">
+				En savoir plus
+				<img
+					src="../assets/img/rightArrow.svg"
+					alt=""
+					class="cardService__text--learnMore--img"
+					id="myid"
+				/>
+			</p>
 		</div>
 	</div>
 </template>
@@ -19,6 +27,24 @@ export default {
 		textExplicationService: String,
 		src: String,
 		leStyle: Object,
+		linkRedirection: String,
+	},
+	components: {},
+	methods: {
+		switchPage: function() {
+			return this.$router.push({
+				name: "Services",
+				params: {
+					name: this.linkRedirection,
+				},
+			})
+		},
+		switchImg: function() {
+			this.$el["myid"].setAttribute("src", "../assets/img/rightArrow.svg")
+		},
+	},
+	mounted() {
+		console.error("aaaa" + this.$el["myid"])
 	},
 }
 </script>
@@ -31,7 +57,7 @@ export default {
 	align-items: center;
 	text-align: center;
 	justify-content: space-around;
-
+	margin-bottom: 8%;
 	&--image {
 		width: 86px;
 		height: 80px;
@@ -79,6 +105,32 @@ export default {
 			}
 			@include laptop {
 				font-size: 20px;
+			}
+		}
+		&--learnMore {
+			cursor: pointer;
+			font-size: 8px;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: flex-end;
+			@include tablet {
+				font-size: 10px;
+			}
+			@include laptop {
+				font-size: 12px;
+			}
+			&:hover {
+				color: $secondaryPink;
+				cursor: pointer;
+				// & img {
+				// 	background: url("~@/assets/img/parallax.jpg");
+				// }
+			}
+			& img {
+				width: 20%;
+				height: 40%;
+				opacity: 1;
 			}
 		}
 	}

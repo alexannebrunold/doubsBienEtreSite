@@ -1,7 +1,6 @@
 <template>
 	<div id="app">
 		<Header />
-
 		<router-view />
 		<Footer />
 	</div>
@@ -21,11 +20,8 @@ export default {
 </script>
 
 <style lang="scss">
-// #app {
-// 	font-family: "Josefin Sans", sans-serif;
-// 	-webkit-font-smoothing: antialiased;
-// 	-moz-osx-font-smoothing: grayscale;
-// 	text-align: center;
-// 	color: $secondaryPink;
-// }
+#app {
+	width: 100vw;
+	height: 100%;
+}
 </style>
