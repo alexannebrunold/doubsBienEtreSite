@@ -1,6 +1,15 @@
 <template>
-	<div>
-		<button @click="$router.go(-1)">Back</button>
+	<div class="service">
+		<span class="service__back">
+			<img
+				@click="$router.go(-1)"
+				src="../assets/img/leftArrow.svg"
+				alt="Flêche de retour"
+				class="service--image"
+			/>
+			Retour
+		</span>
+
 		<ExplicationService
 			:currentPage="currentService"
 			:listebienfaits="currentService.listebienfaits"
@@ -81,4 +90,33 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.service {
+	width: 100%;
+	height: auto;
+
+	&__back {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		font-family: "Josefin Sans", sans-serif;
+		padding-top: 2%;
+		padding-right: 16px;
+		padding-left: 16px;
+		font-size: 10px;
+		cursor: pointer;
+		&:hover {
+			color: $secondaryPink;
+		}
+		@include tablet {
+			padding-right: 80px;
+			padding-left: 80px;
+			font-size: 12px;
+		}
+		& img {
+			width: 2%;
+			margin-right: 1%;
+		}
+	}
+}
+</style>
