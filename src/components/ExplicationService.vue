@@ -4,10 +4,12 @@
 
 		<div class="explicationService__flex">
 			<h2 class="explicationService__flex--question">{{ currentPage.whatIsIt }}</h2>
-			<img src="../assets/img/testImg.jpg" alt="" />
-			<p class="explicationService__flex--text">
-				{{ currentPage.textWhat }}
-			</p>
+			<div class="explicationService__flex__flexx">
+				<img src="../assets/img/testImg.jpg" alt="" />
+				<p class="explicationService__flex__flexx--text">
+					{{ currentPage.textWhat }}
+				</p>
+			</div>
 		</div>
 		<div class="explicationService__to">
 			<h2 class="explicationService__to--question">{{ currentPage.forWhoWhat }}</h2>
@@ -103,9 +105,17 @@ export default {
 			font-weight: 300;
 			@include tablet {
 				font-size: 16px;
+				&::first-letter {
+					color: $secondaryLightPink;
+					font-size: 28px;
+					font-weight: normal;
+				}
 			}
 			@include laptop {
 				font-size: 20px;
+				&::first-letter {
+					font-size: 32px;
+				}
 			}
 		}
 	}
@@ -128,24 +138,48 @@ export default {
 			}
 			@include laptop {
 				font-size: 32px;
+				margin-bottom: 0;
 			}
 		}
-		&--text {
-			font-size: 12px;
-			text-align: left;
-			font-weight: 300;
-			width: 80%;
-			margin: auto;
+		&__flexx {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			@include tablet {
-				font-size: 16px;
+				flex-direction: row-reverse;
+				align-items: center;
 			}
-			@include laptop {
-				font-size: 20px;
+			&--text {
+				font-size: 12px;
+				text-align: left;
+				font-weight: 300;
+				width: 80%;
+				margin: auto;
+
+				@include tablet {
+					font-size: 16px;
+					width: 60%;
+					margin: 0;
+					&::first-letter {
+						color: $secondaryLightPink;
+						font-size: 28px;
+						font-weight: normal;
+					}
+				}
+				@include laptop {
+					font-size: 20px;
+					&::first-letter {
+						font-size: 32px;
+					}
+				}
 			}
-		}
-		& img {
-			align-self: center;
-			margin-bottom: 4%;
+			& img {
+				align-self: center;
+				margin-bottom: 4%;
+				@include tablet {
+					width: 30%;
+				}
+			}
 		}
 	}
 	&__benefits {
