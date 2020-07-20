@@ -62,6 +62,11 @@ export default {
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100%;
+	@include tablet {
+		padding-right: 80px;
+		padding-left: 80px;
+	}
+
 	&--title {
 		font-family: "Dancing Script", cursive;
 		font-size: 20px;
@@ -77,15 +82,31 @@ export default {
 	}
 	&__to {
 		margin-bottom: 16%;
+		@include tablet {
+			margin-bottom: 8%;
+		}
 		&--question {
 			font-size: 18px;
 			text-align: left;
 			margin-bottom: 8%;
+			@include tablet {
+				font-size: 20px;
+				margin-bottom: 4%;
+			}
+			@include laptop {
+				font-size: 32px;
+			}
 		}
 		&--text {
 			font-size: 12px;
 			text-align: left;
 			font-weight: 300;
+			@include tablet {
+				font-size: 16px;
+			}
+			@include laptop {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -94,10 +115,20 @@ export default {
 		flex-direction: column;
 		justify-content: space-between;
 		margin-bottom: 16%;
+		@include tablet {
+			margin-bottom: 8%;
+		}
 		&--question {
 			font-size: 18px;
 			text-align: left;
 			margin-bottom: 8%;
+			@include tablet {
+				font-size: 20px;
+				margin-bottom: 4%;
+			}
+			@include laptop {
+				font-size: 32px;
+			}
 		}
 		&--text {
 			font-size: 12px;
@@ -105,6 +136,12 @@ export default {
 			font-weight: 300;
 			width: 80%;
 			margin: auto;
+			@include tablet {
+				font-size: 16px;
+			}
+			@include laptop {
+				font-size: 20px;
+			}
 		}
 		& img {
 			align-self: center;
@@ -113,10 +150,21 @@ export default {
 	}
 	&__benefits {
 		margin-bottom: 16%;
+		@include tablet {
+			margin-bottom: 8%;
+		}
+
 		&--question {
 			font-size: 18px;
 			text-align: left;
 			margin-bottom: 8%;
+			@include tablet {
+				font-size: 20px;
+				margin-bottom: 4%;
+			}
+			@include laptop {
+				font-size: 32px;
+			}
 		}
 		& li::before {
 			content: "\2022";
@@ -131,9 +179,12 @@ export default {
 				font-size: 14px;
 				font-weight: lighter;
 				margin-bottom: 2%;
+				@include tablet {
+					font-size: 16px;
+				}
+
 				@include laptop {
 					font-size: 20px;
-					margin-bottom: 8%;
 				}
 			}
 		}
