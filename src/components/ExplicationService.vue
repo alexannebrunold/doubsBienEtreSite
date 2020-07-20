@@ -12,10 +12,9 @@
 		<h2 class="explicationService--question">{{ currentPage.forWhoWhat }}</h2>
 		<p class="explicationService--text">{{ currentPage.forPeople }}</p>
 		<h2 class="explicationService--question">{{ bienfaits }}</h2>
-		<ul>
-			<li>Bonjour</li>
-			<li>Coucou</li>
-		</ul>
+		<li v-for="(listebienfait, index) in listebienfaits" :key="index" class="cardDiplome__list--li">
+			{{ listebienfait }}
+		</li>
 		<Button />
 	</div>
 </template>
@@ -37,6 +36,7 @@ export default {
 		firstQuestion: String,
 		secondQuestion: String,
 		currentPage: Object,
+		listebienfaits: Array,
 	},
 	mounted() {},
 }
@@ -47,11 +47,17 @@ export default {
 	font-family: "Josefin Sans", sans-serif;
 	padding-right: 16px;
 	padding-left: 16px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	height: 100vh;
 	&--title {
 		font-family: "Dancing Script", cursive;
 		font-size: 20px;
 		margin-bottom: 8%;
 		text-align: center;
+
 		@include tablet {
 			font-size: 24px;
 		}
@@ -61,6 +67,7 @@ export default {
 	}
 	&--question {
 		font-size: 18px;
+		text-align: left;
 	}
 	&--text {
 		font-size: 12px;
@@ -72,6 +79,8 @@ export default {
 			font-size: 12px;
 			text-align: left;
 			font-weight: 300;
+			width: 80%;
+			margin: auto;
 		}
 	}
 }

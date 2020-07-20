@@ -1,6 +1,9 @@
 <template>
 	<div>
-		<ExplicationService :currentPage="currentService" />
+		<ExplicationService
+			:currentPage="currentService"
+			:listebienfaits="currentService.listebienfaits"
+		/>
 	</div>
 </template>
 
@@ -20,6 +23,7 @@ export default {
 					forWhoWhat: "Pour qui ? Pour quoi ? ",
 					forPeople:
 						"Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdamUltima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdamUltima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et nitidis et civitates habens quasdam",
+					listebienfaits: ["Bonjour", "Coucou", "Salut"],
 				},
 				magnetisme: {
 					title: "Le Magnetisme",
