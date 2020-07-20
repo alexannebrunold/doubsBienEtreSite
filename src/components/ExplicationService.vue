@@ -1,36 +1,47 @@
 <template>
 	<div class="explicationService">
 		<h1 class="explicationService--title">{{ currentPage.title }}</h1>
-		<h2 class="explicationService--question">{{ currentPage.whatIsIt }}</h2>
+
 		<div class="explicationService__flex">
+			<h2 class="explicationService__flex--question">{{ currentPage.whatIsIt }}</h2>
 			<img src="../assets/img/testImg.jpg" alt="" />
 			<p class="explicationService__flex--text">
 				{{ currentPage.textWhat }}
 			</p>
 		</div>
+		<div class="explicationService__to">
+			<h2 class="explicationService__to--question">{{ currentPage.forWhoWhat }}</h2>
+			<p class="explicationService__to--text">{{ currentPage.forPeople }}</p>
+		</div>
+		<div class="explicationService__benefits">
+			<h2 class="explicationService__benefits--question">{{ bienfaits }}</h2>
+			<ul>
+				<li
+					v-for="(listebienfait, index) in listebienfaits"
+					:key="index"
+					class="explicationService__benefits__list--li"
+				>
+					{{ listebienfait }}
+				</li>
+			</ul>
+		</div>
 
-		<h2 class="explicationService--question">{{ currentPage.forWhoWhat }}</h2>
-		<p class="explicationService--text">{{ currentPage.forPeople }}</p>
-		<h2 class="explicationService--question">{{ bienfaits }}</h2>
-		<li v-for="(listebienfait, index) in listebienfaits" :key="index" class="cardDiplome__list--li">
-			{{ listebienfait }}
-		</li>
-		<Button />
+		<!-- <Button /> -->
 	</div>
 </template>
 
 <script>
-import Button from "@/components/Button.vue"
+// import Button from "@/components/Button.vue"
 
 export default {
-	name: "PrimaryButton",
+	name: "ExplicationService",
 	data() {
 		return {
 			bienfaits: "Les bienfaits",
 		}
 	},
 	components: {
-		Button,
+		// Button,
 	},
 	props: {
 		firstQuestion: String,
@@ -50,8 +61,7 @@ export default {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	text-align: center;
-	height: 100vh;
+	height: 100%;
 	&--title {
 		font-family: "Dancing Script", cursive;
 		font-size: 20px;
@@ -65,22 +75,67 @@ export default {
 			font-size: 48px;
 		}
 	}
-	&--question {
-		font-size: 18px;
-		text-align: left;
+	&__to {
+		margin-bottom: 16%;
+		&--question {
+			font-size: 18px;
+			text-align: left;
+			margin-bottom: 8%;
+		}
+		&--text {
+			font-size: 12px;
+			text-align: left;
+			font-weight: 300;
+		}
 	}
-	&--text {
-		font-size: 12px;
-		text-align: left;
-		font-weight: 300;
-	}
+
 	&__flex {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-bottom: 16%;
+		&--question {
+			font-size: 18px;
+			text-align: left;
+			margin-bottom: 8%;
+		}
 		&--text {
 			font-size: 12px;
 			text-align: left;
 			font-weight: 300;
 			width: 80%;
 			margin: auto;
+		}
+		& img {
+			align-self: center;
+			margin-bottom: 4%;
+		}
+	}
+	&__benefits {
+		margin-bottom: 16%;
+		&--question {
+			font-size: 18px;
+			text-align: left;
+			margin-bottom: 8%;
+		}
+		& li::before {
+			content: "\2022";
+			color: $secondary;
+			font-weight: bold;
+			display: inline-block;
+			width: 1em;
+			font-size: 1em;
+		}
+		&__list {
+			&--li {
+				font-size: 14px;
+				font-weight: lighter;
+				margin-bottom: 2%;
+				@include laptop {
+					font-size: 20px;
+					margin-bottom: 8%;
+				}
+			}
 		}
 	}
 }
