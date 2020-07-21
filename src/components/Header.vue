@@ -26,7 +26,6 @@ export default {
 	},
 	methods: {
 		cc: function() {
-			// hamburger.addEventListener("click", () => {
 			this.$el.querySelector(".header__navLinks").classList.toggle("open")
 			// this.$el.querySelectorAll(".header__navLinks li").forEach((link) => {
 			// 	link.classList.toggle("fade")
@@ -46,13 +45,13 @@ export default {
 
 	flex-direction: row;
 	justify-content: space-between;
-
 	position: relative;
-
 	@include tablet {
 		height: 72px;
-		padding-right: 80px;
-		padding-left: 80px;
+	}
+	@include laptop {
+		position: fixed;
+		align-items: center;
 	}
 	&--title {
 		vertical-align: middle;
@@ -65,6 +64,7 @@ export default {
 		font-size: 32px;
 		@include tablet {
 			font-size: 40px;
+			padding-left: 80px;
 		}
 		@include laptop {
 			font-size: 48px;
@@ -96,17 +96,19 @@ export default {
 		-webkit-clip-path: circle(100px at 90% -10%);
 		transition: all 1s ease-out;
 		pointer-events: none;
+
 		@include laptop {
+			position: relative;
+			width: 40%;
+			list-style: none;
+			height: 0;
+			clip-path: none;
+			-webkit-clip-path: none;
 			display: flex;
-			list-style: none;
-			justify-content: space-around;
-			align-items: center;
 			flex-direction: row;
-			list-style: none;
-
 			align-items: center;
-
-			background-color: violet;
+			justify-content: space-between;
+			padding-right: 80px;
 		}
 		& li {
 			opacity: 0;
@@ -143,7 +145,10 @@ export default {
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
-
+			@include tablet {
+				clip-path: circle(2000px at 90% -10%);
+				-webkit-clip-path: circle(2000px at 90% -10%);
+			}
 			& li {
 				opacity: 1;
 
@@ -155,24 +160,6 @@ export default {
 				}
 			}
 		}
-
-		// @include laptop {
-		// 	display: flex;
-		// 	list-style: none;
-		// 	width: 50%;
-		// 	height: 100%;
-		// 	justify-content: space-around;
-		// 	align-items: center;
-		// 	margin-left: auto;
-		// 	& li a {
-		// 		color: white;
-		// 		text-decoration: none;
-		// 		font-size: 16px;
-		// 		@include laptop {
-		// 			opacity: 1;
-		// 		}
-		// 	}
-		// }
 	}
 }
 </style>
