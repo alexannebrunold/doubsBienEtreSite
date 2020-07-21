@@ -52,6 +52,7 @@ export default {
 	@include laptop {
 		position: fixed;
 		align-items: center;
+		z-index: 1;
 	}
 	&--title {
 		vertical-align: middle;
@@ -78,7 +79,7 @@ export default {
 		transform: translate(-5%, -50%);
 		z-index: 15;
 		@include laptop {
-			opacity: 0;
+			display: none;
 		}
 		&--line {
 			width: 30px;
@@ -109,10 +110,11 @@ export default {
 			align-items: center;
 			justify-content: space-between;
 			padding-right: 80px;
+			pointer-events: all;
 		}
 		& li {
 			opacity: 0;
-			z-index: 11;
+
 			@include laptop {
 				opacity: 1;
 			}
@@ -127,8 +129,18 @@ export default {
 			}
 			& a {
 				font-size: 24px;
+				text-decoration: none;
+				color: $white;
+				font-family: "Josefin Sans", sans-serif;
+				text-transform: uppercase;
+
 				@include laptop {
 					opacity: 1;
+					text-transform: none;
+
+					&:hover {
+						text-decoration-line: underline;
+					}
 				}
 			}
 		}
@@ -152,12 +164,12 @@ export default {
 			& li {
 				opacity: 1;
 
-				& a {
-					text-decoration: none;
-					color: $white;
-					font-family: "Josefin Sans", sans-serif;
-					text-transform: uppercase;
-				}
+				// & a {
+				// 	text-decoration: none;
+				// 	color: $white;
+				// 	font-family: "Josefin Sans", sans-serif;
+				// 	text-transform: uppercase;
+				// }
 			}
 		}
 	}
