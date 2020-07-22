@@ -345,6 +345,7 @@ export default {
 				& a {
 					text-decoration: none;
 					color: $black;
+
 					&:hover {
 						color: $secondaryPink;
 					}

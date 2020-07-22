@@ -133,14 +133,28 @@ export default {
 				color: $white;
 				font-family: "Josefin Sans", sans-serif;
 				text-transform: uppercase;
+				position: relative;
+				&::after {
+					content: "";
+					position: absolute;
+					left: 50%;
+					bottom: -2px;
+					transform: translateX(-50%) scaleX(0);
+					transform-origin: 50% 50%;
+					width: 100%;
+					height: 1.4px;
+					background-color: $white;
+					transition: transform 250ms;
+				}
+				&:hover {
+					&::after {
+						transform: translateX(-50%) scaleX(1);
+					}
+				}
 
 				@include laptop {
 					opacity: 1;
 					text-transform: none;
-
-					&:hover {
-						text-decoration-line: underline;
-					}
 				}
 			}
 		}
