@@ -50,7 +50,7 @@ export default {
 		height: 72px;
 	}
 	@include laptop {
-		position: fixed;
+		// position: fixed;
 		align-items: center;
 		z-index: 1;
 	}

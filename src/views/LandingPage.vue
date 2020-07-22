@@ -63,7 +63,12 @@
 					</span>
 				</div>
 			</div>
-			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
+			<img
+				src="../assets/img/upArrow.svg"
+				alt=""
+				class="landingPage__contact--upArrow"
+				@click="scrollToTop"
+			/>
 		</section>
 	</div>
 </template>
@@ -114,6 +119,14 @@ export default {
 	computed: {
 		listee() {
 			return console.log(this.diplome.liste.length + "cc")
+		},
+	},
+	methods: {
+		scrollToTop: function() {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			})
 		},
 	},
 }
@@ -246,7 +259,7 @@ export default {
 	}
 
 	&--parallaxImage {
-		background-image: url("~@/assets/img/parallax.jpg");
+		background-image: url("~@/assets/img/test.jpg");
 
 		height: 160px;
 
@@ -256,7 +269,7 @@ export default {
 		background-size: cover;
 	}
 	&--parallaxImage2 {
-		background-image: url("~@/assets/img/parallax2.jpg");
+		background-image: url("~@/assets/img/test.jpg");
 
 		height: 160px;
 
@@ -368,6 +381,7 @@ export default {
 			width: 24px;
 			margin-top: 4%;
 			margin-bottom: 4%;
+			cursor: pointer;
 			@include tablet {
 				height: 32px;
 				width: 32px;
