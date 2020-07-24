@@ -12,15 +12,27 @@
 
 		<!-- Présentation -->
 		<section class="landingPage__presentation">
-			<h1 class="landingPage__presentation--title">Qui suis-je ?</h1>
+			<h1
+				class="landingPage__presentation--title"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+			>
+				Qui suis-je ?
+			</h1>
 			<img src="../assets/img/logo/avatar.svg" alt="" class="landingPage__presentation--avatar" />
-			<p class="landingPage__presentation--textPresentation">
+			<p
+				class="landingPage__presentation--textPresentation"
+				v-scroll-reveal="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+			>
 				Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
 				nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut
 				ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit
 				Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
 			</p>
-			<Button textButton="Lire la suite" class="landingPage__presentation--buttonReadMore" />
+			<Button
+				textButton="Lire la suite"
+				class="landingPage__presentation--buttonReadMore"
+				@click.native="$router.push('/aboutme')"
+			/>
 		</section>
 
 		<div class="landingPage--parallaxImage2"></div>

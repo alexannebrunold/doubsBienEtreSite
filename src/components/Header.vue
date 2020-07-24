@@ -8,10 +8,16 @@
 				<div class="header__hamburger--line"></div>
 				<div class="header__hamburger--line"></div>
 			</div>
-			<ul class="header__navLinks">
-				<li><a href="#">Services</a></li>
-				<li><a href="#">À Propos</a></li>
-				<li><a href="#">Contact</a></li>
+			<ul class="header__navLinks" @click="clickClose">
+				<li @click="$router.push('/')" class="li">
+					<a class="li">Services</a>
+				</li>
+				<li @click="$router.push('/aboutme')" class="li">
+					<a class="li">À Propos</a>
+				</li>
+				<li @click="$router.push('/contact')" class="li">
+					<a class="li">Contact</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
@@ -27,10 +33,10 @@ export default {
 	methods: {
 		cc: function() {
 			this.$el.querySelector(".header__navLinks").classList.toggle("open")
-			// this.$el.querySelectorAll(".header__navLinks li").forEach((link) => {
-			// 	link.classList.toggle("fade")
-			// })
-			// })
+		},
+		clickClose: function() {
+			console.log("coucou")
+			this.$el.querySelector(".header__navLinks").classList.remove("open")
 		},
 	},
 }
@@ -158,6 +164,9 @@ export default {
 				}
 			}
 		}
+		&.close {
+			visibility: hidden;
+		}
 		&.open {
 			clip-path: circle(1000px at 90% -10%);
 			-webkit-clip-path: circle(1000px at 90% -10%);
@@ -171,6 +180,7 @@ export default {
 			flex-direction: column;
 			justify-content: space-evenly;
 			align-items: center;
+
 			@include tablet {
 				clip-path: circle(2000px at 90% -10%);
 				-webkit-clip-path: circle(2000px at 90% -10%);
