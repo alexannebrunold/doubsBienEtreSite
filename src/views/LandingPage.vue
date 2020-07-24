@@ -12,15 +12,27 @@
 
 		<!-- Présentation -->
 		<section class="landingPage__presentation">
-			<h1 class="landingPage__presentation--title">Qui suis-je ?</h1>
+			<h1
+				class="landingPage__presentation--title"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+			>
+				Qui suis-je ?
+			</h1>
 			<img src="../assets/img/logo/avatar.svg" alt="" class="landingPage__presentation--avatar" />
-			<p class="landingPage__presentation--textPresentation">
+			<p
+				class="landingPage__presentation--textPresentation"
+				v-scroll-reveal="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+			>
 				Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
 				nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut
 				ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit
 				Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
 			</p>
-			<Button textButton="Lire la suite" class="landingPage__presentation--buttonReadMore" />
+			<Button
+				textButton="Lire la suite"
+				class="landingPage__presentation--buttonReadMore"
+				@click.native="$router.push('/aboutme')"
+			/>
 		</section>
 
 		<div class="landingPage--parallaxImage2"></div>
@@ -63,7 +75,12 @@
 					</span>
 				</div>
 			</div>
-			<img src="../assets/img/upArrow.svg" alt="" class="landingPage__contact--upArrow" />
+			<img
+				src="../assets/img/upArrow.svg"
+				alt=""
+				class="landingPage__contact--upArrow"
+				@click="scrollToTop"
+			/>
 		</section>
 	</div>
 </template>
@@ -114,6 +131,14 @@ export default {
 	computed: {
 		listee() {
 			return console.log(this.diplome.liste.length + "cc")
+		},
+	},
+	methods: {
+		scrollToTop: function() {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			})
 		},
 	},
 }
@@ -246,7 +271,7 @@ export default {
 	}
 
 	&--parallaxImage {
-		background-image: url("~@/assets/img/parallax.jpg");
+		background-image: url("~@/assets/img/test.jpg");
 
 		height: 160px;
 
@@ -256,7 +281,7 @@ export default {
 		background-size: cover;
 	}
 	&--parallaxImage2 {
-		background-image: url("~@/assets/img/parallax2.jpg");
+		background-image: url("~@/assets/img/test.jpg");
 
 		height: 160px;
 
@@ -332,6 +357,7 @@ export default {
 				& a {
 					text-decoration: none;
 					color: $black;
+
 					&:hover {
 						color: $secondaryPink;
 					}
@@ -368,6 +394,7 @@ export default {
 			width: 24px;
 			margin-top: 4%;
 			margin-bottom: 4%;
+			cursor: pointer;
 			@include tablet {
 				height: 32px;
 				width: 32px;

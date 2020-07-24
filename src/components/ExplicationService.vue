@@ -27,7 +27,12 @@
 				</li>
 			</ul>
 		</div>
-
+		<img
+			src="../assets/img/upArrow.svg"
+			alt=""
+			class="explicationService--upArrow"
+			@click="scrollToTop"
+		/>
 		<!-- <Button /> -->
 	</div>
 </template>
@@ -41,6 +46,14 @@ export default {
 		return {
 			bienfaits: "Les bienfaits",
 		}
+	},
+	methods: {
+		scrollToTop: function() {
+			window.scrollTo({
+				top: 0,
+				behavior: "smooth",
+			})
+		},
 	},
 	components: {
 		// Button,
@@ -221,6 +234,20 @@ export default {
 					font-size: 20px;
 				}
 			}
+		}
+	}
+	&--upArrow {
+		float: right;
+		height: 24px;
+		width: 24px;
+
+		margin-bottom: 4%;
+		@include tablet {
+			height: 32px;
+			width: 32px;
+			display: flex;
+			flex-direction: row;
+			align-self: flex-end;
 		}
 	}
 }
