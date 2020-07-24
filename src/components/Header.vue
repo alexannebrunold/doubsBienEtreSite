@@ -35,7 +35,6 @@ export default {
 			this.$el.querySelector(".header__navLinks").classList.toggle("open")
 		},
 		clickClose: function() {
-			console.log("coucou")
 			this.$el.querySelector(".header__navLinks").classList.remove("open")
 		},
 	},
