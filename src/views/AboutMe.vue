@@ -1,7 +1,12 @@
 <template>
 	<section class="aboutMe">
 		<div class="aboutMe__whoIs">
-			<h1 class="aboutMe__whoIs--title">Mes services</h1>
+			<h1
+				class="aboutMe__whoIs--title"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 100 }"
+			>
+				Mes services
+			</h1>
 			<div class="aboutMe__whoIs--flex">
 				<img src="../assets/img/logo/avatar.svg" alt="" class="aboutMe__whoIs--flex--avatar" />
 				<p class="aboutMe__whoIs--flex--textPresentation">

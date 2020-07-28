@@ -14,19 +14,24 @@
 		<section class="landingPage__presentation">
 			<h1
 				class="landingPage__presentation--title"
-				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 100 }"
 			>
 				Qui suis-je ?
 			</h1>
-			<img src="../assets/img/logo/avatar.svg" alt="" class="landingPage__presentation--avatar" />
+			<img
+				src="../assets/img/logo/avatar.svg"
+				alt=""
+				class="landingPage__presentation--avatar"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+			/>
 			<p
 				class="landingPage__presentation--textPresentation"
-				v-scroll-reveal="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px' }"
 			>
-				Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
-				nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim velut
-				ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis exaedificavit
-				Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo superiore exstructas
+				Bonjour, je suis Annabelle votre praticienne en Reiki, magnetisme et coach de vie. Après de
+				longues années d'études et de développement personnel, je propose de vous apaiser et soigner
+				vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que coach diplômée,
+				je vous accompagne dans votre évolution pour briller et vous accomplir à votre tour.
 			</p>
 			<Button
 				textButton="Lire la suite"
@@ -250,6 +255,11 @@ export default {
 			width: 72%;
 			margin: auto;
 			margin-bottom: 8%;
+			&::first-letter {
+				color: $secondaryLightPink;
+				font-size: 24px;
+				font-weight: normal;
+			}
 			@include tablet {
 				font-size: 16px;
 				grid-area: 2 / 2 / 3 / 3;

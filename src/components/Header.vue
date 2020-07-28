@@ -3,7 +3,7 @@
 		<nav class="header">
 			<h1 class="header--title">Annabelle</h1>
 
-			<div class="header__hamburger" @click="cc">
+			<div class="header__hamburger" @click="openMenu">
 				<div class="header__hamburger--line"></div>
 				<div class="header__hamburger--line"></div>
 				<div class="header__hamburger--line"></div>
@@ -31,7 +31,7 @@ export default {
 		}
 	},
 	methods: {
-		cc: function() {
+		openMenu: function() {
 			this.$el.querySelector(".header__navLinks").classList.toggle("open")
 		},
 		clickClose: function() {
@@ -102,7 +102,7 @@ export default {
 		-webkit-clip-path: circle(100px at 90% -10%);
 		transition: all 1s ease-out;
 		pointer-events: none;
-
+		cursor: pointer;
 		@include laptop {
 			position: relative;
 			width: 40%;
