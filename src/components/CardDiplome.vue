@@ -42,9 +42,16 @@ export default {
 	font-family: "Josefin Sans", sans-serif;
 	border-radius: 6px;
 	align-items: center;
+
 	@include laptop {
 		width: 332px;
 		height: 408px;
+		transition: 0.4s;
+		&:hover {
+			-webkit-box-shadow: 16px 10px 24px 1px rgba(221, 220, 220, 0.8);
+			-moz-box-shadow: 16px 10px 24px 1px rgba(201, 200, 200, 0.8);
+			box-shadow: 16px 10px 24px 1px rgba(214, 214, 214, 0.8);
+		}
 	}
 	&__text {
 		&--title {

@@ -44,8 +44,6 @@ export default {
 		},
 	},
 	// created() {
-	// 	window.scrollTo(0, 0)
-
 	// 	console.error("aaaa" + this.$el["myid"])
 	// },
 }
