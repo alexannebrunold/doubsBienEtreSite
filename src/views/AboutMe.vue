@@ -159,8 +159,10 @@ export default {
 
 		@include tablet {
 			flex-direction: row;
-
 			height: 44vh;
+		}
+		@include laptop {
+			height: 80vh;
 		}
 	}
 }

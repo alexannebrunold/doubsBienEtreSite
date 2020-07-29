@@ -4,7 +4,10 @@
 			<h1 class="contact__messages--title">Envie de prendre contact ?</h1>
 			<div class="contact__messages__next">
 				<div>
-					<h2>1 Par Mail</h2>
+					<h2>
+						1 Par Mail
+					</h2>
+					<h3>1 Par Mail</h3>
 					<p>abc@def.hi</p>
 				</div>
 				<div>
@@ -57,6 +60,25 @@ export default {
 	}
 	& h2 {
 		font-size: 14px;
+		position: absolute;
+		text-decoration: none;
+		-webkit-text-stroke: 1px;
+		-webkit-text-stroke-color: #000;
+		color: $white;
+		z-index: 2;
+		@include tablet {
+			font-size: 20px;
+		}
+	}
+	& h3 {
+		font-size: 14px;
+		position: relative;
+		text-decoration: none;
+		-webkit-text-stroke: 4px;
+		-webkit-text-stroke-color: $secondaryLightPink;
+		margin-left: 2px;
+		color: transparent;
+		z-index: 1;
 		@include tablet {
 			font-size: 20px;
 		}
@@ -116,6 +138,31 @@ export default {
 			height: 80%;
 			background-repeat: no-repeat;
 		}
+	}
+}
+.number {
+	font-size: 14px;
+	position: absolute;
+	text-decoration: none;
+	-webkit-text-stroke: 1px;
+	-webkit-text-stroke-color: #000;
+	color: $white;
+	z-index: 2;
+	@include tablet {
+		font-size: 20px;
+	}
+}
+.numberBack {
+	font-size: 14px;
+	position: relative;
+	text-decoration: none;
+	-webkit-text-stroke: 4px;
+	-webkit-text-stroke-color: $secondaryLightPink;
+
+	color: transparent;
+	z-index: 6;
+	@include tablet {
+		font-size: 20px;
 	}
 }
 </style>
