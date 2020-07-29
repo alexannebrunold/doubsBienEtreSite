@@ -106,6 +106,7 @@ export default {
 			text-align: center;
 			@include tablet {
 				font-size: 40px;
+				margin-bottom: 0%;
 			}
 			@include laptop {
 				font-size: 48px;
@@ -158,8 +159,8 @@ export default {
 
 		@include tablet {
 			flex-direction: row;
-			justify-content: space-around;
-			height: 80vh;
+
+			height: 44vh;
 		}
 	}
 }

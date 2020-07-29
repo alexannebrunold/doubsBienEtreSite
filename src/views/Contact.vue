@@ -1,6 +1,5 @@
 <template>
 	<div class="contact">
-		<h1 class="contact--title">Contact</h1>
 		<div class="contact__messages">
 			<h1 class="contact__messages--title">Envie de prendre contact ?</h1>
 			<div class="contact__messages__next">
@@ -51,14 +50,19 @@ export default {
 	flex-direction: column;
 	height: 100vh;
 	justify-content: space-evenly;
+	text-align: center;
+	@include tablet {
+		padding-right: 80px;
+		padding-left: 80px;
+	}
 	& h2 {
-		font-size: 16px;
+		font-size: 14px;
 		@include tablet {
 			font-size: 20px;
 		}
 	}
 	& p {
-		font-size: 14px;
+		font-size: 12px;
 		@include tablet {
 			font-size: 18px;
 		}
@@ -79,15 +83,15 @@ export default {
 		justify-content: space-around;
 		height: 40%;
 		&--title {
-			font-size: 16px;
+			font-size: 20px;
 			font-family: "Dancing Script", cursive;
-
+			margin-bottom: 8%;
 			@include tablet {
 				font-size: 48px;
 			}
 		}
 		&__next {
-			background-image: url("~@/assets/img/parallax2.jpg");
+			background-image: url("~@/assets/img/flowersBackground.jpg");
 			padding: 16px;
 			display: flex;
 			flex-direction: column;
@@ -103,7 +107,7 @@ export default {
 		justify-content: space-around;
 		height: 40%;
 		&__text {
-			background-image: url("~@/assets/img/parallax2.jpg");
+			background-image: url("~@/assets/img/flowersBackground.jpg");
 			padding: 16px;
 			display: flex;
 			flex-direction: column;

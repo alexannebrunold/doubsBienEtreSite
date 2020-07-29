@@ -24,14 +24,30 @@
 				class="landingPage__presentation--avatar"
 				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
 			/>
+
 			<p
 				class="landingPage__presentation--textPresentation"
 				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px' }"
 			>
-				Bonjour, je suis Annabelle votre praticienne en Reiki, magnetisme et coach de vie. Après de
-				longues années d'études et de développement personnel, je propose de vous apaiser et soigner
-				vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que coach diplômée,
-				je vous accompagne dans votre évolution pour briller et vous accomplir à votre tour.
+				Bonjour, je suis
+				<span>Annabelle</span>
+				votre praticienne en
+				<span>Reiki</span>
+				,
+				<span>magnetisme</span>
+				et
+				<span>coach de vie</span>
+				. Après de longues années d'études et de développement personnel, je propose de vous
+				<span>apaiser</span>
+				et
+				<span>soigner</span>
+				vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que
+				<span>coach diplômée</span>
+				, je vous accompagne dans votre évolution pour
+				<span>briller</span>
+				et
+				<span>vous accomplir</span>
+				à votre tour.
 			</p>
 			<Button
 				textButton="Lire la suite"
@@ -263,18 +279,28 @@ export default {
 				font-size: 24px;
 				font-weight: normal;
 			}
+			& span {
+				color: $secondaryLightPink;
+				font-weight: 300;
+			}
 			@include tablet {
 				font-size: 16px;
 				grid-area: 2 / 2 / 3 / 3;
 				margin-bottom: 12%;
 				font-size: 16px;
+
+				&::first-letter {
+					font-size: 28px;
+				}
 			}
 			@include laptop {
 				font-size: 24px;
 				width: 100%;
 				margin: 0;
-				display: flex;
 				align-self: center;
+				&::first-letter {
+					font-size: 32px;
+				}
 			}
 		}
 		&--buttonReadMore {
@@ -408,6 +434,7 @@ export default {
 			margin-top: 4%;
 			margin-bottom: 4%;
 			cursor: pointer;
+			animation: flash 2s infinite;
 			@include tablet {
 				height: 32px;
 				width: 32px;
@@ -449,6 +476,17 @@ export default {
 				margin-bottom: 6%;
 			}
 		}
+	}
+}
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.1;
+	}
+	100% {
+		opacity: 1;
 	}
 }
 </style>
