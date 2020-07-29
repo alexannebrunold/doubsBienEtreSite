@@ -5,7 +5,6 @@ import store from "./store"
 import VueScrollReveal from "vue-scroll-reveal"
 
 Vue.use(VueScrollReveal)
-
 Vue.config.productionTip = false
 
 new Vue({

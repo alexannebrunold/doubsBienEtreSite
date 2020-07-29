@@ -43,9 +43,9 @@ export default {
 			this.$el["myid"].setAttribute("src", "../assets/img/rightArrow.svg")
 		},
 	},
-	mounted() {
-		console.error("aaaa" + this.$el["myid"])
-	},
+	// created() {
+	// 	console.error("aaaa" + this.$el["myid"])
+	// },
 }
 </script>
 

@@ -31,4 +31,10 @@ const router = new VueRouter({
 	routes,
 })
 
+//ScrollToTop Before Every Routes Change
+router.beforeEach((to, from, next) => {
+	window.scrollTo(0, 0)
+	next()
+})
+
 export default router

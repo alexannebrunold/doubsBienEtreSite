@@ -1,17 +1,22 @@
 <template>
 	<section class="aboutMe">
 		<div class="aboutMe__whoIs">
-			<h1 class="aboutMe__whoIs--title">Mes services</h1>
+			<h1
+				class="aboutMe__whoIs--title"
+				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 100 }"
+			>
+				Mes services
+			</h1>
 			<div class="aboutMe__whoIs--flex">
 				<img src="../assets/img/logo/avatar.svg" alt="" class="aboutMe__whoIs--flex--avatar" />
 				<p class="aboutMe__whoIs--flex--textPresentation">
-					Ultima Syriarum est Palaestina per intervalla magna protenta, cultis abundans terris et
-					nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed sibi vicissim
-					velut ad perpendiculum aemulas: Caesaream, quam ad honorem Octaviani principis
-					exaedificavit Herodes, et Eleutheropolim et Neapolim itidemque Ascalonem Gazam aevo
-					superiore exstructas Ultima Syriarum est Palaestina per intervalla magna protenta, cultis
-					abundans terris et nitidis et civitates habens quasdam egregias, nullam nulli cedentem sed
-					sibi vicissim velut ad
+					Bonjour, je suis Annabelle votre praticienne en Reiki, magnetisme et coach de vie. Après
+					de longues années d'études et de développement personnel, je propose de vous apaiser et
+					soigner vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que coach
+					diplômée, je vous accompagne dans votre évolution pour briller et vous accomplir à votre
+					tour. Après 20 ans dans l'assurance, être aux contacts des énergies humaines m'est
+					important. Et c'est avec joie que je vous accompagnerai vers une vie plus apaisée et
+					accordée.
 				</p>
 			</div>
 		</div>
@@ -35,8 +40,9 @@ export default {
 		return {
 			diplomes: [
 				{
-					title: "Diplôme de Lorem",
-					description: "Ultima Syriarum est Palaestina per intervalla magna",
+					title: "Diplôme de Reiki",
+					description:
+						"Ce diplôme valide les compétences et la capacité à exercer sur soi et sur les autres",
 					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 				{
@@ -45,8 +51,8 @@ export default {
 					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 				{
-					title: "Diplôme de Lorem",
-					description: "Ultima Syriarum est Palaestina per intervalla magna",
+					title: "Diplôme de Coach",
+					description: "Ce diplôme permet de valider les compétences en tant que coach",
 					names: ["Lorem", "Lorem", "Lorem", "Lorem"],
 				},
 			],

@@ -1,9 +1,14 @@
 <template>
 	<div>
 		<nav class="header">
-			<h1 class="header--title">Annabelle</h1>
-
-			<div class="header__hamburger" @click="cc">
+			<!-- <h1 class="header--title">Annabelle</h1> -->
+			<img
+				src="../assets/img/logo/logo1.svg"
+				alt=""
+				class="header--logo"
+				@click="$router.push('/')"
+			/>
+			<div class="header__hamburger" @click="openMenu">
 				<div class="header__hamburger--line"></div>
 				<div class="header__hamburger--line"></div>
 				<div class="header__hamburger--line"></div>
@@ -31,11 +36,14 @@ export default {
 		}
 	},
 	methods: {
-		cc: function() {
+		openMenu: function() {
 			this.$el.querySelector(".header__navLinks").classList.toggle("open")
 		},
 		clickClose: function() {
 			this.$el.querySelector(".header__navLinks").classList.remove("open")
+		},
+		scrollInto: function() {
+			// this.$el.querySelector(".landingPage").scrollTo(".landingPage__services")
 		},
 	},
 }
@@ -59,21 +67,21 @@ export default {
 		align-items: center;
 		z-index: 1;
 	}
-	&--title {
+	&--logo {
 		vertical-align: middle;
 		margin: auto 0;
 		padding-left: 16px;
+		height: 80%;
+		cursor: pointer;
 
-		color: $white;
-		font-family: "Dancing Script", cursive;
-		font-weight: bold;
-		font-size: 32px;
-		@include tablet {
-			font-size: 40px;
-			padding-left: 80px;
-		}
 		@include laptop {
 			font-size: 48px;
+			height: 100%;
+			padding-left: 80px;
+			transition: 0.4s;
+			&:hover {
+				transform: scale(1.01);
+			}
 		}
 	}
 	&__hamburger {
@@ -102,7 +110,7 @@ export default {
 		-webkit-clip-path: circle(100px at 90% -10%);
 		transition: all 1s ease-out;
 		pointer-events: none;
-
+		cursor: pointer;
 		@include laptop {
 			position: relative;
 			width: 40%;
