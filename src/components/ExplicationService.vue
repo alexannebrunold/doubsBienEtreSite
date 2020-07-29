@@ -33,12 +33,12 @@
 			class="explicationService--upArrow"
 			@click="scrollToTop"
 		/>
-		<!-- <Button /> -->
+		<Button textButton="Prendre contact" @click.native="$router.push('/contact')" />
 	</div>
 </template>
 
 <script>
-// import Button from "@/components/Button.vue"
+import Button from "@/components/Button.vue"
 
 export default {
 	name: "ExplicationService",
@@ -56,7 +56,7 @@ export default {
 		},
 	},
 	components: {
-		// Button,
+		Button,
 	},
 	props: {
 		firstQuestion: String,

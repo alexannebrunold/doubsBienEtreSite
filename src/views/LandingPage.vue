@@ -72,11 +72,14 @@
 					<a href="tel:0102030405">01 02 03 04 05</a>
 					<span class="landingPage__contact__cardContact--links__facebook">
 						<img src="../assets/img/logo/facebook.svg" alt="Facebook" />
-						<p>doubsbiênetre5@yahoo.fr</p>
+
+						<a href="https://www.facebook.com/doubsbienetre25" target="blank">Doubs Bien Être</a>
 					</span>
 					<span class="landingPage__contact__cardContact--links__instagram">
 						<img src="../assets/img/logo/instagram.svg" alt="Instagram" />
-						<p>doubsbiênetre5@yahoo.fr</p>
+						<a href="https://www.instagram.com/doubsbienetre/?hl=fr" target="blank">
+							doubsbienetre
+						</a>
 					</span>
 				</div>
 			</div>
