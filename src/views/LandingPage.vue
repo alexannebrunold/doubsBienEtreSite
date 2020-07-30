@@ -18,40 +18,42 @@
 			>
 				Qui suis-je ?
 			</h1>
-			<img
-				src="../assets/img/logo/avatar.svg"
-				alt=""
-				class="landingPage__presentation--avatar"
-				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
-			/>
+			<div class="landingPage__presentation__test">
+				<img
+					src="../assets/img/logo/avatar.svg"
+					alt=""
+					class="landingPage__presentation__test--avatar"
+					v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px', delay: 200 }"
+				/>
 
-			<p
-				class="landingPage__presentation--textPresentation"
-				v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px' }"
-			>
-				Bonjour, je suis
-				<span>Annabelle</span>
-				votre praticienne en
-				<span>Reiki</span>
-				,
-				<span>magnetisme</span>
-				et
-				<span>coach de vie</span>
-				. Après de longues années d'études et de développement personnel, je propose de vous
-				<span>apaiser</span>
-				et
-				<span>soigner</span>
-				vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que
-				<span>coach diplômée</span>
-				, je vous accompagne dans votre évolution pour
-				<span>briller</span>
-				et
-				<span>vous accomplir</span>
-				à votre tour.
-			</p>
+				<p
+					class="landingPage__presentation__test--textPresentation"
+					v-scroll-reveal.reset="{ duration: 800, scale: 1, distance: '10px' }"
+				>
+					Bonjour, je suis
+					<span>Annabelle</span>
+					votre praticienne en
+					<span>Reiki</span>
+					,
+					<span>magnetisme</span>
+					et
+					<span>coach de vie</span>
+					. Après de longues années d'études et de développement personnel, je propose de vous
+					<span>apaiser</span>
+					et
+					<span>soigner</span>
+					vos maux par la pratique énergétique du Reiki et du magnétisme. En tant que
+					<span>coach diplômée</span>
+					, je vous accompagne dans votre évolution pour
+					<span>briller</span>
+					et
+					<span>vous accomplir</span>
+					à votre tour.
+				</p>
+			</div>
 			<Button
 				textButton="Lire la suite"
-				class="landingPage__presentation--buttonReadMore"
+				class="landingPage__presentation__test--buttonReadMore"
 				@click.native="$router.push('/aboutme')"
 			/>
 		</section>
@@ -219,22 +221,14 @@ export default {
 		padding-left: 16px;
 		padding-top: 12%;
 		padding-bottom: 16%;
-		height: 86vh;
 		text-align: center;
 		font-family: "Josefin Sans", sans-serif;
 		@include tablet {
 			padding-right: 80px;
 			padding-left: 80px;
-			display: grid;
-			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: repeat(3, auto);
-			grid-column-gap: 0px;
-			grid-row-gap: 0px;
-			height: 100vh;
 		}
 		@include laptop {
 			padding-top: 6%;
-			padding-bottom: 16%;
 		}
 		&--title {
 			font-family: "Dancing Script", cursive;
@@ -244,68 +238,73 @@ export default {
 			text-decoration: underline;
 			@include tablet {
 				font-size: 24px;
-				grid-area: 1 / 2 / 2 / 3;
-				margin-bottom: 0;
 			}
 			@include laptop {
 				font-size: 48px;
 				margin-bottom: 6%;
 			}
 		}
-		&--avatar {
-			width: 204px;
-			height: 132px;
-			margin-bottom: 14%;
+		&__test {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 			@include tablet {
-				width: 231px;
-				height: 227.02px;
-				grid-area: 2 / 1 / 3 / 2;
-				margin-bottom: 12%;
+				flex-direction: row;
+				justify-content: space-between;
 			}
-			@include laptop {
-				width: 353px;
-				height: 346.91px;
-				margin-bottom: 0;
-			}
-		}
-		&--textPresentation {
-			font-size: 12px;
-			font-weight: lighter;
-			width: 72%;
-			margin: auto;
-			margin-bottom: 8%;
-			&::first-letter {
-				color: $secondaryLightPink;
-				font-size: 24px;
-				font-weight: normal;
-			}
-			& span {
-				color: $secondaryLightPink;
-				font-weight: 300;
-			}
-			@include tablet {
-				font-size: 16px;
-				grid-area: 2 / 2 / 3 / 3;
-				margin-bottom: 12%;
-				font-size: 16px;
 
-				&::first-letter {
-					font-size: 28px;
+			&--avatar {
+				width: 204px;
+				height: 132px;
+				margin-bottom: 14%;
+				@include tablet {
+					width: 231px;
+					height: 227.02px;
+					margin-bottom: 12%;
+				}
+				@include laptop {
+					width: 353px;
+					height: 346.91px;
+					margin-bottom: 0;
 				}
 			}
-			@include laptop {
-				font-size: 24px;
-				width: 100%;
-				margin: 0;
-				align-self: center;
+			&--textPresentation {
+				font-size: 12px;
+				font-weight: lighter;
+				width: 72%;
+				margin: auto;
+				margin-bottom: 8%;
 				&::first-letter {
-					font-size: 32px;
+					color: $secondaryLightPink;
+					font-size: 24px;
+					font-weight: normal;
+				}
+				& span {
+					color: $secondaryLightPink;
+					font-weight: 300;
+				}
+				@include tablet {
+					font-size: 16px;
+					margin-bottom: 12%;
+					font-size: 16px;
+					width: 50%;
+					&::first-letter {
+						font-size: 28px;
+					}
+				}
+				@include laptop {
+					font-size: 24px;
+					width: 50%;
+					margin: 0;
+					align-self: center;
+					&::first-letter {
+						font-size: 32px;
+					}
 				}
 			}
-		}
-		&--buttonReadMore {
-			float: right;
-			grid-area: 3 / 2 / 4 / 3;
+			&--buttonReadMore {
+				float: right;
+			}
 		}
 	}
 
