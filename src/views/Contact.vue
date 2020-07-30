@@ -1,8 +1,8 @@
 <template>
 	<div class="contact">
-		<div class="contact__messages">
-			<h1 class="contact__messages--title">Envie de prendre contact ?</h1>
-			<div class="contact__messages__next">
+		<div class="contact__action">
+			<h1 class="contact__action--title">Envie de prendre contact ?</h1>
+			<div class="contact__action__mailOrPhone">
 				<div>
 					<h2>
 						1 Par Mail
@@ -11,20 +11,10 @@
 					<p>abc@def.hi</p>
 				</div>
 				<div>
-					<h2>1 Par Mail</h2>
-					<p>abc@def.hi</p>
-				</div>
-			</div>
-		</div>
-		<div class="contact__find">
-			<h1 class="contact--title">Où me retrouver ?</h1>
-			<div class="contact__find__text">
-				<div>
-					<h2>1 Par Mail</h2>
-					<p>abc@def.hi</p>
-				</div>
-				<div>
-					<h2>1 Par Mail</h2>
+					<h2>
+						1 Par Téléphone
+					</h2>
+					<h3>1 Par Téléphone</h3>
 					<p>abc@def.hi</p>
 				</div>
 			</div>
@@ -49,10 +39,9 @@ export default {
 	padding-right: 16px;
 	padding-left: 16px;
 	font-family: "Josefin Sans", sans-serif;
-	display: flex;
-	flex-direction: column;
+
 	height: 100vh;
-	justify-content: space-evenly;
+	margin-top: 8%;
 	text-align: center;
 	@include tablet {
 		padding-right: 80px;
@@ -89,17 +78,7 @@ export default {
 			font-size: 18px;
 		}
 	}
-
-	&--title {
-		font-family: "Dancing Script", cursive;
-		font-size: 20px;
-		margin-bottom: 8%;
-		text-align: center;
-		@include tablet {
-			font-size: 48px;
-		}
-	}
-	&__messages {
+	&__action {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
@@ -112,31 +91,18 @@ export default {
 				font-size: 48px;
 			}
 		}
-		&__next {
+		&__mailOrPhone {
 			background-image: url("~@/assets/img/flowersBackground.jpg");
 			padding: 16px;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
-			height: 80%;
+			height: 100%;
 			background-repeat: no-repeat;
-		}
-	}
-	&__find {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		height: 40%;
-		&__text {
-			background-image: url("~@/assets/img/flowersBackground.jpg");
-			padding: 16px;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			align-items: center;
-			height: 80%;
-			background-repeat: no-repeat;
+			@include tablet {
+				flex-direction: row;
+			}
 		}
 	}
 }
