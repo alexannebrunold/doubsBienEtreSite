@@ -63,16 +63,19 @@
 		<!-- Services -->
 		<section class="landingPage__services">
 			<h1 class="landingPage__services--title">Mes services</h1>
-			<CardService
-				v-for="(logo, index) in logos"
-				:key="index"
-				:src="logo.image"
-				:textTitleService="logo.textTitleService"
-				:textExplicationService="logo.textExplicationService"
-				:leStyle="{ backgroundColor: logo.color }"
-				:linkRedirection="logo.linkRedirection"
-			/>
+			<div class="landingPage__services--cards">
+				<CardService
+					v-for="(logo, index) in logos"
+					:key="index"
+					:src="logo.image"
+					:textTitleService="logo.textTitleService"
+					:textExplicationService="logo.textExplicationService"
+					:leStyle="{ backgroundColor: logo.color }"
+					:linkRedirection="logo.linkRedirection"
+				/>
+			</div>
 		</section>
+
 		<div class="landingPage--parallaxImage2"></div>
 		<!-- Contact -->
 		<section class="landingPage__contact">
@@ -444,35 +447,39 @@ export default {
 		}
 	}
 	&__services {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-		text-align: center;
-		padding-left: 80px;
-		padding-right: 80px;
 		margin-top: 2%;
+		padding-left: 16px;
+		padding-right: 16px;
 		@include tablet {
-			height: 40vh;
-			flex-direction: row;
+			padding-left: 80px;
+			padding-right: 80px;
 		}
-		@include laptop {
-			height: 90vh;
-		}
+
 		&--title {
 			font-family: "Dancing Script", cursive;
 			margin-bottom: 16%;
 			font-size: 24px;
 			font-weight: bold;
 			text-decoration: underline;
+			text-align: center;
 			@include tablet {
 				font-size: 24px;
-				grid-area: 1 / 2 / 2 / 3;
-				margin-bottom: 0;
+				margin-bottom: 8%;
 			}
 			@include laptop {
 				font-size: 48px;
 				margin-bottom: 6%;
+			}
+		}
+		&--cards {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			align-items: center;
+			text-align: center;
+			@include laptop {
+				flex-direction: row;
+				height: 90vh;
 			}
 		}
 	}
